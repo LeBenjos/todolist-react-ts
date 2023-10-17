@@ -16,7 +16,6 @@ export default function Layout() {
 
   return (
     <div className="Layout">
-      <SideBar />
       <div className="Main">blabla</div>
     </div>
   );

@@ -24,11 +24,24 @@
 
 html,
 body,
-#root {
+#root,
+#root > * {
   height: 100%;
 }
 
 body {
   background-color: var(--color-beige);
   font-family: var(--font-family);
+}
+
+.App {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-template-rows: 100%;
+}
+
+.App .SideBar {
+  width: 256px;
+  height: 100%;
 }
