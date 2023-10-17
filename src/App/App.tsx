@@ -9,7 +9,7 @@ import PrivateRoute from "./routes/PrivateRoute.tsx";
 
 // Pages
 import Authentication from "./pages/Authentication/Authentication.tsx";
-import Home from "./pages/Home.tsx";
+import Layout from "./pages/Layout/Layout.tsx";
 
 // Constants
 import { PagePath } from "./constants/paths/PagePath.ts";
@@ -23,7 +23,7 @@ export default function App() {
       <Routes>
         <Route path={PagePath.AUTHENTIFICATION} element={<Authentication />} />
         <Route element={<PrivateRoute redirect={PagePath.AUTHENTIFICATION} />}>
-          <Route path={PagePath.HOME} element={<Home />} />
+          <Route path={PagePath.HOME} element={<Layout />} />
         </Route>
       </Routes>
     </Auth>

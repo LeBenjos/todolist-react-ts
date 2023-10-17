@@ -1,0 +1,27 @@
+import { signOut } from "firebase/auth";
+import { auth } from "../../context/firebase";
+import { useContext, useEffect, useState } from "react";
+import { get } from "../../services/get";
+import { authContext } from "../../context/Auth";
+import "./Layout.css";
+import SideBar from "../../components/SideBarComp/SideBar";
+
+export default function Layout() {
+  const [userData, setUserData] = useState<any>();
+  const user = useContext(authContext);
+
+  useEffect(() => {
+    if (!user) return;
+
+    get(user?.providerData[0].uid).then((res) => setUserData(res));
+  }, []);
+
+  return (
+    <div className="Layout">
+      <SideBar />
+      <div className="Main">blabla</div>
+      {/* {userData ? userData.username : ""} */}
+      {/* <input type="submit" value="LogOut" onClick={() => signOut(auth)} /> */}
+    </div>
+  );
+}

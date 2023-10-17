@@ -1,0 +1,9 @@
+.SideBar {
+  padding: 2rem 1rem;
+}
+.SideBar .sidebar-header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 6px;
+  align-items: center;
+}
