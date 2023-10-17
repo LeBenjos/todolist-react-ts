@@ -8,7 +8,7 @@ import { User, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../context/firebase";
 
 //Constants
-import { ErrorMessage } from "../../constants/ErrorMessage";
+import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 
 export default function LogIn() {
   const [email, setEmail] = useState<string>("");
@@ -16,12 +16,12 @@ export default function LogIn() {
   const [error, setError] = useState<string>("");
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if(error) setError("")
+    if (error) setError("")
     setEmail(e.target.value);
   };
 
   const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if(error) setError("")
+    if (error) setError("")
     setPassword(e.target.value);
   };
 
@@ -40,7 +40,7 @@ export default function LogIn() {
         const errorCode = error.code;
         const errorMessage = error.message;
         let message: string;
-        switch(errorCode){
+        switch (errorCode) {
           case "auth/invalid-email":
             message = ErrorMessage.AUTH_INVALID_EMAIL
             break;

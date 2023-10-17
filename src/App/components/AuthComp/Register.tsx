@@ -1,5 +1,14 @@
-import React, { useState } from "react";
+// Libraries
+import { useState } from "react";
+
+// Services
 import { createUser } from "../../services/register.service";
+
+// Constants
+import { ErrorMessage } from "../../constants/messages/ErrorMessage";
+import { SuccessMessage } from "../../constants/messages/SuccessMessage";
+
+// Styles
 import "./Auth.css";
 
 export default function Register() {
@@ -12,6 +21,7 @@ export default function Register() {
 
   const handleRegistration = async (e: any) => {
     if (!email || !password || !username) {
+      setError(ErrorMessage.AUTH_INVALID_INPUT);
       return;
     }
 
@@ -25,7 +35,7 @@ export default function Register() {
 
     createState
       ? handleError(createState)
-      : handleSuccess("Compte crée avec succ");
+      : handleSuccess(SuccessMessage.AUTH_REGISTER_SUCCESS);
   };
 
   const handleError = (text: string) => {
@@ -43,12 +53,13 @@ export default function Register() {
 
   return (
     <form className="Auth" action="">
-      <p className="error-input">{error}</p>
+      <p className="error-p">{error}</p>
       <p className="success-input">{success}</p>
       <div className="input-container">
         <label htmlFor="name">Nom d'utilisateur</label>
         <input
           required
+          className={error ? "error-input" : ""}
           type="text"
           name="name"
           id="name"
@@ -64,6 +75,7 @@ export default function Register() {
         <label htmlFor="email">Adresse mail</label>
         <input
           required
+          className={error ? "error-input" : ""}
           type="email"
           name="email"
           id="email"
@@ -79,6 +91,7 @@ export default function Register() {
         <label htmlFor="password">Mot de passe</label>
         <input
           required
+          className={error ? "error-input" : ""}
           type="password"
           name="password"
           id="password"
