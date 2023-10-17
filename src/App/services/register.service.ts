@@ -19,7 +19,10 @@ export const createUser = async (
         response.user.email || createUserCredentials.email
       );
 
-      setDoc(userDoc, { ...createUserCredentials });
+      setDoc(userDoc, {
+        email: createUserCredentials.email,
+        username: createUserCredentials.username,
+      });
 
       return null;
     })
