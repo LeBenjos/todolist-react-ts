@@ -42,9 +42,12 @@
   background-color: var(--color-green);
 }
 
-.Auth .error-input {
+.Auth .error-p {
   color: red;
   text-decoration: underline;
+}
+.Auth .error-input {
+  border: 1px solid red;
 }
 .Auth .success-input {
   color: color(--color-green);
