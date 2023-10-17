@@ -34,15 +34,16 @@ export default function LogIn() {
         const user: User = userCredential.user;
       })
       .catch((error) => {
-        const errorCode= error.code;
+        const errorCode = error.code;
         const errorMessage = error.message;
-        setError(errorCode)
+        const message = errorCode.split("/")[1].split("-").join(" ")
+        setError(message)
       });
   };
 
   return <>
-    <div>{error}</div>
     <form className="Auth">
+      <p className="error-input">{error}</p>
       <div className="input-container">
         <label htmlFor="email">Adresse mail</label>
         <input
