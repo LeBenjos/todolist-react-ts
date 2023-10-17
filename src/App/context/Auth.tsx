@@ -1,23 +1,32 @@
+// Libraries
 import { createContext, useEffect, useState } from "react";
+
+// Firebase
 import { User, onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase";
 
-export const authContext = createContext<User | undefined>(undefined)
+// Context
+import { auth } from "./firebase.tsx";
+    
+export const authContext = createContext<User | undefined>(undefined);
 
-export default function Auth({children}: {children: JSX.Element}): JSX.Element{
-    const [currentAuth, setCurrentAuth] = useState<User>();
+export default function Auth({children}: {children: any}): JSX.Element{
+    const localContext = localStorage.getItem("context");
+    const context: User | undefined = localContext ? JSON.parse(localContext) as User : undefined;
+    const [currentAuth, setCurrentAuth] = useState<User | undefined>(context);
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if(user){
-                setCurrentAuth(user)
+                localStorage.setItem("context", JSON.stringify(user));
+                setCurrentAuth(user);
             } else {
-                setCurrentAuth(undefined)
+                localStorage.removeItem("context");
+                setCurrentAuth(undefined);
             }
         })
     }, [])
 
-    return <authContext.Provider value={currentAuth}>
-        {children}
+    return <authContext.Provider value={ currentAuth }>
+        { children }
     </authContext.Provider>
 }

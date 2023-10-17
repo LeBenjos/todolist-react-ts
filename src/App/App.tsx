@@ -11,9 +11,11 @@ import PrivateRoute from './routes/PrivateRoute.tsx';
 import Authentication from './pages/Authentication.tsx';
 import Home from './pages/Home.tsx';
 
+// Constants
+import { PagePath } from './constants/paths/PagePath.ts';
+
 // Styles
 import './styles/app.css'
-import { PagePath } from './constants/paths/PagePath.ts';
 
 export default function App() {
 
