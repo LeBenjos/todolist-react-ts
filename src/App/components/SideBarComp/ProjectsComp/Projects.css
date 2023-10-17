@@ -31,13 +31,15 @@
   justify-content: flex-end;
 }
 
-.Projects a {
+.Projects a,
+.Projects .projects-modal {
   color: var(--color-grey);
   font-weight: 700;
   text-decoration: none;
   font-size: 1rem;
 }
-.Projects a li {
+.Projects a li,
+.Projects .projects-modal {
   list-style: none;
   padding: 0 0 0.5rem 3rem;
 }

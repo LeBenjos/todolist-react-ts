@@ -36,13 +36,15 @@ export default function Projects() {
         />
       </button>
       <div className="projects-modal">
-        {isOpen &&
-          projects &&
+        {isOpen && projects ? (
           projects.map((project) => (
             <Link to={"/project/" + project.id}>
               <li>{project.name}</li>
             </Link>
-          ))}
+          ))
+        ) : (
+          <span>Aucun projet</span>
+        )}
       </div>
       {/* <Link to={"/add-project"}> */}
       <button
