@@ -33,10 +33,15 @@ export default function LogIn() {
 
   return (
     <>
-      <h1>TEST</h1>
-      <form action="">
-        <input type="text" onChange={handleEmail} value={email} />
-        <input type="text" onChange={handlePassword} value={password} />
+      <form>
+        <div className="input-container">
+          <label htmlFor="email">Email</label>
+          <input id="email" type="email" name="email" onChange={handleEmail} value={email} required />
+        </div>
+        <div className="input-container">
+          <label htmlFor="password">Password</label>
+          <input id="password" type="password" name="password" onChange={handlePassword} value={password} required />
+        </div>
         <input type="submit" value="LogIn" onClick={login} />
       </form>
     </>
