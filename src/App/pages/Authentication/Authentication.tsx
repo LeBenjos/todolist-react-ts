@@ -16,9 +16,11 @@ export default function Authentication() {
       {hasAccount ? <LogIn /> : <Register />}
 
       <button className="span-link" onClick={() => setHasAccount(!hasAccount)}>
+        Besoin de
         {hasAccount
-          ? "Besoin de créer un compte ?"
-          : "Besoin de se connecter ?"}
+          ? " créer un compte "
+          : " se connecter "}
+        ?
       </button>
     </div>
   );

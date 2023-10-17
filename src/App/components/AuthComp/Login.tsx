@@ -2,10 +2,13 @@
 import React, { useState } from "react";
 
 // Firebase
-import { User, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { User, signInWithEmailAndPassword } from "firebase/auth";
 
 // Context
 import { auth } from "../../context/firebase";
+
+//Constants
+import { ErrorMessage } from "../../constants/ErrorMessage";
 
 export default function LogIn() {
   const [email, setEmail] = useState<string>("");
@@ -24,7 +27,7 @@ export default function LogIn() {
 
   const login = (e: React.MouseEvent) => {
     if (!email || !password) {
-      setError("Merci de remplir les champs.");
+      setError(ErrorMessage.AUTH_INVALID_INPUT);
       return;
     }
 
@@ -36,14 +39,25 @@ export default function LogIn() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        const message = errorCode.split("/")[1].split("-").join(" ")
+        let message: string;
+        switch(errorCode){
+          case "auth/invalid-email":
+            message = ErrorMessage.AUTH_INVALID_EMAIL
+            break;
+          case "auth/invalid-email":
+            message = ErrorMessage.AUTH_INVALID_EMAIL
+            break;
+          default:
+            message = ErrorMessage.AUTH_DEFAULT_MESSAGE
+            break;
+        }
         setError(message)
       });
   };
 
   return <>
     <form className="Auth">
-      <p className="error-input">{error}</p>
+      <p className="error-p">{error}</p>
       <div className="input-container">
         <label htmlFor="email">Adresse mail</label>
         <input
