@@ -1,9 +1,27 @@
 .SideBar {
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .SideBar .sidebar-header {
   display: flex;
   justify-content: flex-start;
   gap: 6px;
   align-items: center;
+}
+
+.SideBar > button {
+  cursor: pointer;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.SideBar > button:hover {
+  color: var(--color-black);
+  background-color: var(--color-green);
 }
