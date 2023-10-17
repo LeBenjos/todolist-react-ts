@@ -1,0 +1,47 @@
+.Auth {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  gap: var(--fs-medium);
+}
+
+.Auth .input-container {
+  width: 500px;
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.input-container label {
+  font-size: var(--fs-small);
+}
+
+.input-container input {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border: none;
+  font-size: var(--fs-medium);
+  background-color: var(--color-white);
+}
+
+.Auth button {
+  cursor: pointer;
+  padding: 1rem;
+  font-size: var(--fs-medium);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.Auth button:hover {
+  color: var(--color-black);
+  background-color: var(--color-green);
+}
+
+.Auth .error-input {
+  border: 1px solid red;
+}
