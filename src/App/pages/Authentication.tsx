@@ -12,7 +12,7 @@ export default function Authentication() {
     <>
       {hasAccount ? <LogIn /> : <Register />}
       <button onClick={() => setHasAccount(!hasAccount)}>
-        {hasAccount ? <>GO TO Reister</> : <>GO TO LogIn</>}
+        {hasAccount ? <>GO TO Register</> : <>GO TO LogIn</>}
       </button>
     </>
   );
