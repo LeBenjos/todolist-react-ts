@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createUser } from "../../services/register.service";
 import "./Auth.css";
 
 export default function Register() {
@@ -6,8 +7,14 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
-  const handleRegistration = (e: any) => {
+  const handleRegistration = async (e: any) => {
     e.preventDefault();
+
+    await createUser({
+      email,
+      password,
+      username,
+    });
   };
 
   return (
