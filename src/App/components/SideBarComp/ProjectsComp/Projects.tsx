@@ -35,15 +35,17 @@ export default function Projects() {
         />
       </button>
       <div className="projects-modal">
-        {isOpen && projects ? (
-          projects.map((project) => (
-            <Link to={"/project/" + project.id}>
-              <li>{project.name}</li>
-            </Link>
-          ))
-        ) : (
-          <span>{SideBarText.EMPTY_PROJECT}</span>
-        )}
+        {isOpen ? (
+          projects ? (
+            projects.map((project, index) => (
+              <Link key={index} to={"/project/" + project.id}>
+                <li>{project.name}</li>
+              </Link>
+            ))
+          ) : (
+            <span>{SideBarText.EMPTY_PROJECT}</span>
+          )
+        ) : null}
       </div>
       {/* <Link to={"/add-project"}> */}
       <Link to={"/create-project"}>
