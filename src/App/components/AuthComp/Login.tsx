@@ -9,6 +9,7 @@ import { auth } from "../../context/firebase";
 
 //Constants
 import { ErrorMessage } from "../../constants/messages/ErrorMessage";
+import { TextAuth } from "../../constants/texts/TextAuth";
 
 export default function LogIn() {
   const [email, setEmail] = useState<string>("");
@@ -59,7 +60,7 @@ export default function LogIn() {
     <form className="Auth">
       <p className="error-p">{error}</p>
       <div className="input-container">
-        <label htmlFor="email">Adresse mail</label>
+        <label htmlFor="email">{TextAuth.LABEL_EMAIL}</label>
         <input
           className={error ? "error-input" : ""}
           id="email"
@@ -67,12 +68,12 @@ export default function LogIn() {
           type="email"
           onChange={handleEmail}
           value={email}
-          placeholder="Adresse mail"
+          placeholder={TextAuth.PLACEHOLDER_EMAIL}
           required
         />
       </div>
       <div className="input-container">
-        <label htmlFor="password">Mot de passe</label>
+        <label htmlFor="password">{TextAuth.LABEL_PASSWORD}</label>
         <input
           className={error ? "error-input" : ""}
           id="password"
@@ -80,11 +81,11 @@ export default function LogIn() {
           type="password"
           onChange={handlePassword}
           value={password}
-          placeholder="Mot de passe"
+          placeholder={TextAuth.PLACEHOLDER_PASSWORD}
           required
         />
       </div>
-      <button type="submit" onClick={login}>Connexion</button>
+      <button type="submit" onClick={login}>{TextAuth.BUTTON_LOGIN}</button>
     </form>
   </>
 }
