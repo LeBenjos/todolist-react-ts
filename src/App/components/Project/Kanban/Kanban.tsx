@@ -25,7 +25,7 @@ export default function Kanban({ state, tasks }: KanbanProps) {
       <div className="kanban-body">
         {openForm ? (
           <TaskForm state={state} />
-        ) : !tasks.length ? (
+        ) : !tasks?.length ? (
           <span>{KanbanText.NONE_TASK}</span>
         ) : (
           tasks.map((task) => (
