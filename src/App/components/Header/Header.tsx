@@ -1,32 +1,34 @@
+// Libraries
 import { useContext, useEffect, useState } from "react";
-import { ImagePath } from "../../constants/paths/ImagePaths"
-import { User } from "../../models/user.model"
-import "./header.css"
+
+// Context
 import { authContext } from "../../context/Auth";
+
+// Services
 import { get } from "../../services/get";
-import { LoadingMessage } from "../../constants/messages/LoadingMessage";
+
+// Models
+import { User } from "../../models/user.model";
+
+// Components
+import HeaderLeft from "./Side/HeaderLeft";
+import HeaderRight from "./Side/HeaderRight";
+
+// Styles
+import "./header.css"
 
 export default function Header() {
-    const [userData, setUserData] = useState<any>();
+    const [userData, setUserData] = useState<User | undefined>();
     const user = useContext(authContext);
-    console.log(userData)
 
     useEffect(() => {
         if (!user) return;
     
-        get(user?.providerData[0].uid).then((res) => setUserData(res));
+        get(user.providerData[0].uid).then((res) => setUserData(res as User));
       }, []);
 
     return <div className="header-container">
-        <div className="header-left">
-           <h2>{userData ? "Nom du projet" : LoadingMessage.LOADING_PROJECT}</h2>
-        </div>
-        <div className="header-right">
-            <div>
-                <img src={userData ? ImagePath.DEFAULT_PICTURE_GREEN : ImagePath.DEFAULT_PICTURE_RED} alt="" />
-                <h3>{userData ? userData.username : LoadingMessage.LOADING_NAME}</h3>
-            </div>
-            {userData && <button className="buttonCta">+ Nouvelle tache</button>}
-        </div>
+        <HeaderLeft userData={userData} />
+        <HeaderRight userData={userData} />
     </div>
 }
