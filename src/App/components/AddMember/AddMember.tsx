@@ -1,8 +1,5 @@
 // Librairies
-import { useContext, useEffect, useState } from "react";
-
-// Services
-import { createProjects } from "../../services/projects/createProjets.service";
+import { useContext, useState } from "react";
 
 // Context
 import { authContext } from "../../context/Auth";
