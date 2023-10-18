@@ -1,23 +1,31 @@
+// Librairies
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+
 // Models
 import { User } from '../../../models/user.model.ts';
+import { Project } from '../../../models/project.model.ts';
 
 // Constants
 import { LoadingMessage } from '../../../constants/messages/LoadingMessage.ts';
 import { ImagePath } from '../../../constants/paths/ImagePaths.ts';
 import { HeaderText } from '../../../constants/texts/HeaderText.ts';
-import { Project } from '../../../models/project.model.ts';
-import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { LinkPath } from '../../../constants/paths/linkPaths.ts';
 
 export default function HeaderRight({userData, projects} : {userData: User | undefined, projects: Project[] | undefined}) {
     const [project, setProject] = useState<Project | undefined>(undefined);
-    const [addingMember, setAddingMember] = useState<boolean>(false);
+    const [addingMember, setAddingMember] = useState<boolean>(window.location.href.split("/")[5] === LinkPath.PROJECT_ADD_MEMBER ? true : false);
     const { id } = useParams<string>();
 
     useEffect(() => {
         if (!projects) return;
         setProject(projects.find((p: Project) => p.id === id));
     }, [projects, id])
+
+    useEffect(() => {
+        if (!project || window.location.href.split("/")[5] === LinkPath.PROJECT_ADD_MEMBER) return;
+        setAddingMember(false);
+    }, [project])
 
     return <div className="header-right">
         <div>
