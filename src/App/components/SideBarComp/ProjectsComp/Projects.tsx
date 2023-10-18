@@ -6,18 +6,21 @@ import { Link } from "react-router-dom";
 import { ImagePath } from "../../../constants/paths/ImagePaths";
 import { CtaText } from "../../../constants/texts/CtaText";
 import { SideBarText } from "../../../constants/texts/SideBarText";
+import { LoadingMessage } from "../../../constants/messages/LoadingMessage";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>();
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const user = useContext(authContext);
 
   useEffect(() => {
     if (!user) return;
-
+    setIsLoading(true);
     getProjects(user?.providerData[0].uid).then((res) => {
       console.log(res);
       setProjects(res);
+      setIsLoading(false);
     });
   }, []);
 
@@ -42,6 +45,8 @@ export default function Projects() {
                 <li>{project.name}</li>
               </Link>
             ))
+          ) : isLoading ? (
+            <span>{LoadingMessage.LOADING_NAME}</span>
           ) : (
             <span>{SideBarText.EMPTY_PROJECT}</span>
           )
