@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 
 // Services
-import { createProjects } from "../../services/projects/createProjets.service";
+import { addMembers } from "../../services/projects/addMembers.service";
 
 // Context
 import { authContext } from "../../context/Auth";
@@ -15,7 +15,6 @@ import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 // Styles
 import "./AddMemberForm.css";
 import { useParams } from "react-router-dom";
-import { addMembers } from "../../services/projects/addMembers.service";
 
 export default function AddMemberForm() {
     const user = useContext(authContext);
