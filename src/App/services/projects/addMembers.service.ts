@@ -9,7 +9,7 @@ import {
 import { db } from "../../context/firebase";
 
 export const addMembers = async (memberMail: string, projectId: string) => {
-  const userRef = doc(db, "users", memberMail, "projects", projectId);
+  const userRef = doc(db, "users", memberMail);
 
   const userResult = await getDoc(userRef);
 
@@ -20,14 +20,11 @@ export const addMembers = async (memberMail: string, projectId: string) => {
     if (projectResults.exists()) {
       console.log(projectResults.data());
       await updateDoc(projectRef, {
-        participants: [
-          ...(projectResults.data()?.participants || []),
-          memberMail,
-        ],
+        participants: [memberMail],
       });
       return true;
+    } else {
+      return false;
     }
-  } else {
-    return false;
   }
 };
