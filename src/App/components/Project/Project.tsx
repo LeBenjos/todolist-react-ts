@@ -1,13 +1,23 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getKanbans } from "../../services/kanbans/getKanban.service";
 import { useParams } from "react-router-dom";
 
 export default function Project() {
-  const [kanbanData, setKanbanData] = useState<any>();
+  const [kanbanData, setKanbanData] = useState<any>([]);
   const { id } = useParams();
   useEffect(() => {
     if (!id) return;
-    setKanbanData(getKanbans(id));
+    getKanbans(id).then((res) => {
+      setKanbanData(res);
+    });
   }, []);
-  return <div>Project</div>;
+  return (
+    <div>
+      {kanbanData.length
+        ? kanbanData.map((kanban, index) => {
+            return <li key={index}>{kanban.state}</li>;
+          })
+        : undefined}
+    </div>
+  );
 }

@@ -20,25 +20,18 @@ import "./styles/app.css";
 import Project from "./components/Project/Project.tsx";
 
 export default function App() {
-  return <div>
-    <Routes>
-      <Route path={PagePath.AUTHENTIFICATION} element={<Authentication />} />
-      <Route element={<PrivateRoute redirect={PagePath.AUTHENTIFICATION} />}>
-        <Route path={PagePath.HOME} element={<Layout />}>
-          <Route
-            path="project/:id"
-            element={<div>Composant projet</div>}
-          />
-          <Route
-            path="project/:id/add_member"
-            element={<AddMemberForm />}
-          />
-          <Route
-            path="create-project"
-            element={<CreateProjectForm />}
-          />
+  return (
+    <div>
+      <Routes>
+        <Route path={PagePath.AUTHENTIFICATION} element={<Authentication />} />
+        <Route element={<PrivateRoute redirect={PagePath.AUTHENTIFICATION} />}>
+          <Route path={PagePath.HOME} element={<Layout />}>
+            <Route path="project/:id" element={<Project />} />
+            <Route path="project/:id/add_member" element={<AddMemberForm />} />
+            <Route path="create-project" element={<CreateProjectForm />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
-  </div>
+      </Routes>
+    </div>
+  );
 }
