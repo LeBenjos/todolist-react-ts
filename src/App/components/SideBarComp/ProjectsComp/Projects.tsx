@@ -18,7 +18,6 @@ export default function Projects() {
     if (!user) return;
     setIsLoading(true);
     getProjects(user?.providerData[0].uid).then((res) => {
-      console.log(res);
       setProjects(res);
       setIsLoading(false);
     });
@@ -39,7 +38,7 @@ export default function Projects() {
       </button>
       <div className="projects-modal">
         {isOpen ? (
-          projects ? (
+          projects?.length ? (
             projects.map((project, index) => (
               <Link key={index} to={"/project/" + project.id}>
                 <li>{project.name}</li>
