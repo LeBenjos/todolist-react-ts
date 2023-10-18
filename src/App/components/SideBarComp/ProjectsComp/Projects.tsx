@@ -2,10 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import "./Projects.css";
 import { getProjects } from "../../../services/projects/getProjects.service";
 import { authContext } from "../../../context/Auth";
-import FolderIcon from "../../../assets/folder.svg";
 import { Link } from "react-router-dom";
-import { createProjects } from "../../../services/projects/createProjets.service";
 import { ImagePath } from "../../../constants/paths/ImagePaths";
+import { CtaText } from "../../../constants/texts/CtaText";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>();
@@ -49,7 +48,7 @@ export default function Projects() {
       {/* <Link to={"/add-project"}> */}
       <Link to={"/create-project"}>
         {/* TODO: Créer la constante dans Path */}
-        <button type="button">+ Add project</button>
+        <button type="button">+ {CtaText.ADD_PROJECT}</button>
       </Link>
       {/* </Link> */}
     </div>
