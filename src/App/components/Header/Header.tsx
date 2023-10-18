@@ -28,7 +28,7 @@ export default function Header() {
         if (!user) return;
         get(user.providerData[0].uid).then((res) => setUserData(res as User));
         getProjects(user.providerData[0].uid).then((res) => setProjects(res as Project[]));
-    }, []);
+    }, [projects]);
 
 
     return <div className="header-container">
