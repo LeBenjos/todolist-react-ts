@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./CreateProjectForm.css";
 import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 import { CtaText } from "../../constants/texts/CtaText";
+import { createProjects } from "../../services/projects/createProjets.service";
+import { authContext } from "../../context/Auth";
 
 export default function CreateProjectForm() {
+  const user = useContext(authContext);
   const [projectName, setProjectName] = useState("");
   const [error, setError] = useState<string>("");
 
@@ -22,7 +25,12 @@ export default function CreateProjectForm() {
     e.preventDefault();
     if (!projectName) {
       setError(ErrorMessage.AUTH_INVALID_INPUT);
+      return;
     }
+
+    if (!user) return;
+
+    createProjects(user.providerData[0].email, projectName);
   };
 
   return (
