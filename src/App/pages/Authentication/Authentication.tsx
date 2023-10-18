@@ -1,4 +1,4 @@
-// Libraries
+// Librairies
 import { useContext, useState } from "react";
 
 // Components

@@ -1,4 +1,4 @@
-// Libraries
+// Librairies
 import { Outlet } from "react-router-dom";
 
 // Styles

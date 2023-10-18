@@ -1,4 +1,4 @@
-// Libraries
+// Librairies
 import { useState } from "react";
 
 // Services

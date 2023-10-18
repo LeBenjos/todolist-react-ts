@@ -1,4 +1,4 @@
-// Libraries
+// Librairies
 import React, { useState } from "react";
 
 // Firebase

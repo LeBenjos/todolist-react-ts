@@ -1,4 +1,4 @@
-// Libraries
+// Librairies
 import { createContext, useEffect, useState } from "react";
 
 // Firebase
