@@ -17,3 +17,9 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
+.Kanban .kanban-body {
+  height: calc(100% - 36px);
+  overflow: hidden;
+  overflow-y: auto;
+}
