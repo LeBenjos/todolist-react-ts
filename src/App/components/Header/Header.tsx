@@ -2,22 +2,22 @@
 import { useContext, useEffect, useState } from "react";
 
 // Context
-import { authContext } from "../../context/Auth";
+import { authContext } from "../../context/Auth.tsx";
 
 // Services
-import { get } from "../../services/get";
+import { get } from "../../services/get.ts";
+import { getProjects } from "../../services/projects/getProjects.service.ts";
 
 // Models
-import { User } from "../../models/user.model";
-import { Project } from "../../models/project.model";
+import { User } from "../../models/user.model.ts";
+import { Project } from "../../models/project.model.ts";
 
 // Components
-import HeaderLeft from "./Side/HeaderLeft";
-import HeaderRight from "./Side/HeaderRight";
+import HeaderLeft from "./Side/HeaderLeft.tsx";
+import HeaderRight from "./Side/HeaderRight.tsx";
 
 // Styles
 import "./header.css"
-import { getProjects } from "../../services/projects/getProjects.service";
 
 export default function Header() {
     const [userData, setUserData] = useState<User | undefined>();

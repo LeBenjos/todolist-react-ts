@@ -1,4 +1,8 @@
 export enum HeaderText {
-    NOTHING_PROJECT = "Aucun projet de sélectionné"
+    // BUTTON
+    BUTTON_ADD_TASK = "+ Ajouter une tâche",
+
+    // TEXT
+    NOTHING_PROJECT = "Aucun projet de sélectionné",
 }
   

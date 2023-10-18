@@ -16,23 +16,21 @@ import { PagePath } from "./constants/paths/PagePath.ts";
 import "./styles/app.css";
 
 export default function App() {
-  return (
-    <div>
-      <Routes>
-        <Route path={PagePath.AUTHENTIFICATION} element={<Authentication />} />
-        <Route element={<PrivateRoute redirect={PagePath.AUTHENTIFICATION} />}>
-          <Route path={PagePath.HOME} element={<Layout />}>
-            <Route
-              path="project/:id"
-              element={<div>Composant projet</div>}
-            ></Route>
-            <Route
-              path="create-project"
-              element={<CreateProjectForm />}
-            ></Route>
-          </Route>
+  return <div>
+    <Routes>
+      <Route path={PagePath.AUTHENTIFICATION} element={<Authentication />} />
+      <Route element={<PrivateRoute redirect={PagePath.AUTHENTIFICATION} />}>
+        <Route path={PagePath.HOME} element={<Layout />}>
+          <Route
+            path="project/:id"
+            element={<div>Composant projet</div>}
+          ></Route>
+          <Route
+            path="create-project"
+            element={<CreateProjectForm />}
+          ></Route>
         </Route>
-      </Routes>
-    </div>
-  );
+      </Route>
+    </Routes>
+  </div>
 }

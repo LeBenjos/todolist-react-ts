@@ -10,12 +10,12 @@ import { Project } from '../../../models/project.model.ts';
 import { LoadingMessage } from '../../../constants/messages/LoadingMessage.ts';
 import { HeaderText } from '../../../constants/texts/HeaderText.ts';
 
-export default function HeaderLeft({ userData, projects }: { userData: User | undefined, projects: Project[] | undefined}) {
+export default function HeaderLeft({ userData, projects }: { userData: User | undefined, projects: Project[] | undefined }) {
     const [project, setProject] = useState<Project | undefined>(undefined);
     const { id } = useParams<string>();
 
     useEffect(() => {
-        if(!projects) return
+        if (!projects) return;
         setProject(projects.find((p: Project) => p.id === id));
     }, [projects, id])
 
