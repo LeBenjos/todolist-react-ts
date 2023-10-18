@@ -1,0 +1,32 @@
+.TaskCard {
+  padding: 1rem;
+  margin: 8px;
+  border-radius: 8px;
+  font-size: var(--fs-medium);
+  color: var(--color-black);
+  cursor: pointer;
+  background-color: var(--color-white);
+}
+.TaskCard .main-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TaskCard:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.trashBtn {
+  background: none;
+  border: none;
+}
+
+.trashBtn img {
+  width: 30px;
+}
+
+.trashBtn img:hover {
+  width: 40px;
+}

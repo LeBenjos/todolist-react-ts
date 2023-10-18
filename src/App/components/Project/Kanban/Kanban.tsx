@@ -26,7 +26,9 @@ export default function Kanban({ state, tasks }: KanbanProps) {
         ) : !tasks.length ? (
           <span>Aucune tâche</span>
         ) : (
-          tasks.map((task) => <TaskCard description={task.description} />)
+          tasks.map((task) => (
+            <TaskCard currentState={state} description={task} />
+          ))
         )}
       </div>
     </div>
