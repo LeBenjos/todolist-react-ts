@@ -5,6 +5,7 @@ import { CtaText } from "../../constants/texts/CtaText";
 import { createProjects } from "../../services/projects/createProjets.service";
 import { authContext } from "../../context/Auth";
 import { FormText } from "../../constants/texts/FormText";
+import { Link } from "react-router-dom";
 
 export default function CreateProjectForm() {
   const user = useContext(authContext);
@@ -17,7 +18,6 @@ export default function CreateProjectForm() {
   };
 
   const addProject = (e: React.MouseEvent) => {
-    e.preventDefault();
     if (!projectName) {
       setError(ErrorMessage.AUTH_INVALID_INPUT);
       return;
@@ -44,9 +44,11 @@ export default function CreateProjectForm() {
             id="project-name"
           />
         </div>
-        <button onClick={addProject} className="buttonCta">
-          {CtaText.ADD_PROJECT}
-        </button>
+        <Link to="/">
+          <button onClick={addProject} className="buttonCta">
+            {CtaText.ADD_PROJECT}
+          </button>
+        </Link>
       </form>
     </div>
   );
