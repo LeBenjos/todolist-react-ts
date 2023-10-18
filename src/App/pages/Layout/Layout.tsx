@@ -3,6 +3,7 @@ import { get } from "../../services/get";
 import { authContext } from "../../context/Auth";
 import "./Layout.css";
 import SideBar from "../../components/SideBarComp/SideBar";
+import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   const [userData, setUserData] = useState<any>();
@@ -16,7 +17,10 @@ export default function Layout() {
 
   return (
     <div className="Layout">
-      <div className="Main">blabla</div>
+      <SideBar />
+      <div className="Main">
+        <Outlet />
+      </div>
     </div>
   );
 }

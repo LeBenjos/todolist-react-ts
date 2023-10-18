@@ -17,17 +17,21 @@ import { PagePath } from "./constants/paths/PagePath.ts";
 // Styles
 import "./styles/app.css";
 import { useContext } from "react";
-import SideBar from "./components/SideBarComp/SideBar.tsx";
+import CreateProjectForm from "./components/CreateProjectForm/CreateProjectForm.tsx";
 
 export default function App() {
   const user = useContext(authContext);
   return (
-    <div className={user ? "App" : ""}>
-      {user && <SideBar />}
+    <div>
       <Routes>
         <Route path={PagePath.AUTHENTIFICATION} element={<Authentication />} />
         <Route element={<PrivateRoute redirect={PagePath.AUTHENTIFICATION} />}>
-          <Route path={PagePath.HOME} element={<Layout />} />
+          <Route path={PagePath.HOME} element={<Layout />}>
+            <Route
+              path="create-project"
+              element={<CreateProjectForm />}
+            ></Route>
+          </Route>
         </Route>
       </Routes>
     </div>

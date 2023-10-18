@@ -1,1 +1,11 @@
+.Layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-template-rows: 100%;
+}
 
+.Layout .SideBar {
+  width: 256px;
+  height: 100%;
+}
