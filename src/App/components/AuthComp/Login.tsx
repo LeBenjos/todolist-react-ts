@@ -10,6 +10,7 @@ import { auth } from "../../context/firebase";
 //Constants
 import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 import { TextAuth } from "../../constants/texts/TextAuth";
+import Logo from "./Logo";
 
 export default function LogIn() {
   const [email, setEmail] = useState<string>("");
@@ -58,6 +59,7 @@ export default function LogIn() {
 
   return <>
     <form className="Auth">
+      <Logo />
       <p className="error-p">{error}</p>
       <div className="input-container">
         <label htmlFor="email">{TextAuth.LABEL_EMAIL}</label>

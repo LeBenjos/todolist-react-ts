@@ -42,6 +42,22 @@
   background-color: var(--color-green);
 }
 
+.logoContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoContainer img{
+  width: 100px;
+}
+
+
+.Auth .error-p:empty{
+  display: none;
+}
+
 .Auth .error-p {
   color: red;
   text-decoration: underline;

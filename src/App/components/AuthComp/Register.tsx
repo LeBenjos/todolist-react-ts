@@ -11,6 +11,7 @@ import { SuccessMessage } from "../../constants/messages/SuccessMessage";
 // Styles
 import "./Auth.css";
 import { TextAuth } from "../../constants/texts/TextAuth";
+import Logo from "./Logo";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -54,6 +55,7 @@ export default function Register() {
 
   return (
     <form className="Auth" action="">
+      <Logo />
       <p className="error-p">{error}</p>
       <p className="success-input">{success}</p>
       <div className="input-container">

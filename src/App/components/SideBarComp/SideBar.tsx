@@ -1,16 +1,15 @@
-import React from "react";
 import "./SideBar.css";
-import Logo from "../../assets/logo.svg";
 import Projects from "./ProjectsComp/Projects";
 import { signOut } from "firebase/auth";
 import { auth } from "../../context/firebase";
+import { ImagePath } from "../../constants/paths/ImagePaths";
 
 export default function SideBar() {
   return (
     <div className="SideBar">
       <div>
         <div className="sidebar-header">
-          <img src={Logo} alt="Listly logo" width={"54px"} />
+          <img src={ImagePath.LOGO} alt="Listly logo" width={"54px"} />
           <h1> Listly </h1>
         </div>
         <Projects />
