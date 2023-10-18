@@ -1,7 +1,7 @@
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { db } from "../../context/firebase";
 
-const kanbanValues = ["todo", "doing", "done"];
+export const kanbanValues = ["todo", "doing", "done"];
 
 export const createProjects = async (
   userId: string | null,
