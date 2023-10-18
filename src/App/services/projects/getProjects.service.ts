@@ -23,7 +23,7 @@ export const getProjects = async (userId: string) => {
     collection(db, "projects"),
     where("participants", "array-contains", userId)
   );
-  const resultSharedProjectsSnap = await getDocs(queryRef);
+  const resultSharedProjectsSnap = await getDocs(sharedProjectsRef);
 
   resultSharedProjectsSnap.forEach((project) => {
     projectList.push({ ...project.data(), id: project.id });
