@@ -10,8 +10,9 @@ export const deleteTasks = async (
   const resultSnap = await getDoc(queryRef);
 
   if (resultSnap.exists()) {
+    const taskList: string[] = resultSnap.data().tasks;
     await setDoc(queryRef, {
-      tasks: arrayRemove(taskDescription),
+      tasks: taskList.filter((task) => task !== taskDescription),
     });
   }
 };

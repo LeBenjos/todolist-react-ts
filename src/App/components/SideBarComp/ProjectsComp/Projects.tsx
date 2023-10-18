@@ -29,7 +29,8 @@ export default function Projects() {
   useEffect(() => {
     if (!user) return;
     getProjects(user?.providerData[0].uid).then((res) => {
-      if(projects && compareArraysOfObjects(res, projects as Project[])) return;
+      if (projects && compareArraysOfObjects(res, projects as Project[]))
+        return;
       setProjects(res);
       setIsLoading(false);
     });
@@ -60,9 +61,13 @@ export default function Projects() {
               projects.map((project, index) => (
                 <div className="project" key={index}>
                   <Link to="/">
-                    <img src={ImagePath.TRASH} alt="Trash" onClick={() => handleDelete(project.id)}/>
+                    <img
+                      src={ImagePath.TRASH}
+                      alt="Trash"
+                      onClick={() => handleDelete(project.id)}
+                    />
                   </Link>
-                  <Link key={index} to={"/project/" + project.id}>
+                  <Link to={"/project/" + project.id}>
                     <li className="project-name">{project.name}</li>
                   </Link>
                 </div>

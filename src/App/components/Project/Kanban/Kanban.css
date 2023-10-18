@@ -31,3 +31,9 @@
 .taskForm .input-container{
   width: 80%;
 }
+
+.Kanban .kanban-body {
+  height: calc(100% - 36px);
+  overflow: hidden;
+  overflow-y: auto;
+}

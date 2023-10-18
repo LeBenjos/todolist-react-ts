@@ -15,11 +15,10 @@ export default function Project() {
   useEffect(() => {
     if (!id) return;
     getKanbans(id).then((res) => {
+      console.log(res);
       setKanbanData(res);
     });
-
     // createTask(id, "tache");
-    // deleteTasks(id, "tache", "todo");
   }, []);
 
   return (
@@ -28,15 +27,15 @@ export default function Project() {
         <div className="kanban-layout">
           <Kanban
             state={KanbanText.TODO}
-            tasks={kanbanData.find((kanban) => kanban.state === "todo")}
+            tasks={kanbanData.find((kanban) => kanban.state === KanbanText.TODO)}
           />
           <Kanban
             state={KanbanText.DOING}
-            tasks={kanbanData.find((kanban) => kanban.state === "doing")}
+            tasks={kanbanData.find((kanban) => kanban.state === KanbanText.DOING)}
           />
           <Kanban
             state={KanbanText.DONE}
-            tasks={kanbanData.find((kanban) => kanban.state === "done")}
+            tasks={kanbanData.find((kanban) => kanban.state === KanbanText.DONE)}
           />
         </div>
       ) : undefined}
