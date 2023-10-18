@@ -40,7 +40,6 @@ Lancer le serveur :
    - Édition de tâches
    - Filtres suivant l'état de la tâche
 
-
 ## Nous contacter :
 
 Pour nous contacter en cas de besoin :

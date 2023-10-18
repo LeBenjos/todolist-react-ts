@@ -58,7 +58,7 @@ export default function Projects() {
           {isOpen ? (
             projects?.length ? (
               projects.map((project, index) => (
-                <div className="project">
+                <div className="project" key={index}>
                   <Link to="/">
                     <img src={ImagePath.TRASH} alt="Trash" onClick={() => handleDelete(project.id)}/>
                   </Link>

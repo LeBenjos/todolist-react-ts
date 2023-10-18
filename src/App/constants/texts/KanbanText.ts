@@ -1,5 +1,13 @@
-export const KanbanText = {
-  todo: "À faire",
-  doing: "En cours",
-  done: "Terminée",
+export enum KanbanText {
+  // STATE
+  TODO = "À faire",
+  DOING = "En cours",
+  DONE = "Terminée",
+
+  // BUTTON
+  ADD_TASK = "+",
+  BACK = "-",
+
+  // TASK
+  NONE_TASK = "Aucune tâche",
 };

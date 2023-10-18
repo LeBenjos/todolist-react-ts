@@ -1,7 +1,8 @@
 .Kanban button {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  min-width: 40px;
   font-size: 1rem;
   cursor: pointer;
   border: none;
@@ -15,5 +16,18 @@
 .Kanban .kanban-header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.taskForm{
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+.taskForm .input-container{
+  width: 80%;
 }
