@@ -36,20 +36,21 @@ export default function Projects() {
         />
       </button>
       <div className="projects-modal">
-        {isOpen && projects ? (
-          projects.map((project) => (
-            <Link to={"/project/" + project.id}>
-              <li>{project.name}</li>
-            </Link>
-          ))
-        ) : (
-          <span>Aucun projet</span>
-        )}
+        {isOpen &&
+          (projects ? (
+            projects.map((project) => (
+              <Link to={"/project/" + project.id}>
+                <li>{project.name}</li>
+              </Link>
+            ))
+          ) : (
+            <span>Aucun projet</span>
+          ))}
       </div>
       {/* <Link to={"/add-project"}> */}
       <button
       // onClick={() => {
-      //   createProjects("incroyable@test.com", "Recette").then((res) =>
+      //   createProjects("réel@forreal.com", "Recette").then((res) =>
       //     console.log(res)
       //   );
       // }}
