@@ -8,8 +8,8 @@ import {
 } from "firebase/firestore";
 import { db } from "../../context/firebase";
 
-export const addMembers = async (memberId: string, projectId: string) => {
-  const userRef = doc(db, "users", memberId, "projects", projectId);
+export const addMembers = async (memberMail: string, projectId: string) => {
+  const userRef = doc(db, "users", memberMail, "projects", projectId);
 
   const userResult = await getDoc(userRef);
 
@@ -22,7 +22,7 @@ export const addMembers = async (memberId: string, projectId: string) => {
       await updateDoc(projectRef, {
         participants: [
           ...(projectResults.data()?.participants || []),
-          memberId,
+          memberMail,
         ],
       });
       return true;
