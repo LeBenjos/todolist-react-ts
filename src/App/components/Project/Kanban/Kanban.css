@@ -1,0 +1,22 @@
+.Kanban button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  color: var(--color-grey);
+  padding: 0.5rem 0.8rem;
+  background: none;
+}
+
+.Kanban a {
+  text-decoration: none;
+}
+
+.Kanban .kanban-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

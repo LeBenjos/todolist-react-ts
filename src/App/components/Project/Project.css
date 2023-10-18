@@ -1,0 +1,12 @@
+.Project .kanban-layout {
+  padding: 1rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.kanban-layout span {
+  font-weight: 700;
+  color: var(--color-grey);
+}

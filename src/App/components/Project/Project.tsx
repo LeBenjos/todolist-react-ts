@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { getKanbans } from "../../services/kanbans/getKanban.service";
-import { Link, Navigate, useParams } from "react-router-dom";
-import { deleteProject } from "../../services/projects/deleteProject.service";
+import { useParams } from "react-router-dom";
 import { authContext } from "../../context/Auth";
-import { createTask } from "../../services/tasks/createTasks.service";
-import { deleteTasks } from "../../services/tasks/deleteTasks.service";
+// import { createTask } from "../../services/tasks/createTasks.service";
+// import { deleteTasks } from "../../services/tasks/deleteTasks.service";
 import Kanban from "./Kanban/Kanban";
+import "./Project.css";
 
 export default function Project() {
-  const [kanbanData, setKanbanData] = useState<any>([]);
+  const [kanbanData, setKanbanData] = useState<any[]>([]);
   const { id } = useParams();
   const user = useContext(authContext);
   useEffect(() => {
@@ -18,22 +18,11 @@ export default function Project() {
     });
 
     // createTask(id, "tache");
-    deleteTasks(id, "tache", "todo");
+    // deleteTasks(id, "tache", "todo");
   }, []);
 
-  const handleDelete = () => {
-    if (!user || !id) return;
-
-    deleteProject(id, user.providerData[0].uid);
-  };
   return (
-    <div>
-      <Link to="/">
-        <button className="buttonCta" onClick={handleDelete}>
-          Supprimer le projet
-        </button>
-      </Link>
-
+    <div className="Project">
       {kanbanData.length ? (
         <div className="kanban-layout">
           <Kanban
