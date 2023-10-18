@@ -10,6 +10,8 @@ import "./Authentication.css";
 import { authContext } from "../../context/Auth.tsx";
 import { Navigate } from "react-router-dom";
 import { PagePath } from "../../constants/paths/PagePath.ts";
+import { TextAuth } from "../../constants/texts/TextAuth.ts";
+import Logo from "../../components/AuthComp/Logo.tsx";
 
 export default function Authentication() {
   const user = useContext(authContext);
@@ -20,11 +22,9 @@ export default function Authentication() {
       {user && <Navigate to={PagePath.HOME} />}
       {hasAccount ? <LogIn /> : <Register />}
       <button className="span-link" onClick={() => setHasAccount(!hasAccount)}>
-        Besoin de
         {hasAccount
-          ? " créer un compte "
-          : " se connecter "}
-        ?
+          ? TextAuth.BUTTON_SWITCH_TO_REGISTER
+          : TextAuth.BUTTON_SWITCH_TO_LOGIN}
       </button>
     </div>
   );
