@@ -51,3 +51,20 @@
 .Projects a:hover {
   text-decoration: underline;
 }
+
+.project{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 5px 0;
+}
+
+.project img{
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+.project img:hover{
+  width: 30px;
+  aspect-ratio: 1;
+}

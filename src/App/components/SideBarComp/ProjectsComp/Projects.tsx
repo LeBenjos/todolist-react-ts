@@ -37,19 +37,24 @@ export default function Projects() {
         />
       </button>
       <div className="projects-modal">
-        {isOpen ? (
-          projects?.length ? (
-            projects.map((project, index) => (
-              <Link key={index} to={"/project/" + project.id}>
-                <li>{project.name}</li>
-              </Link>
-            ))
-          ) : isLoading ? (
-            <span>{LoadingMessage.LOADING_NAME}</span>
-          ) : (
-            <span>{SideBarText.EMPTY_PROJECT}</span>
-          )
-        ) : null}
+        <ul>
+          {isOpen ? (
+            projects?.length ? (
+              projects.map((project, index) => (
+                <div className="project">
+                  <img src={ImagePath.TRASH} alt="Trash" />
+                  <Link key={index} to={"/project/" + project.id}>
+                    <li className="project-name">{project.name}</li>
+                  </Link>
+                </div>
+              ))
+            ) : isLoading ? (
+              <span>{LoadingMessage.LOADING_NAME}</span>
+            ) : (
+              <span>{SideBarText.EMPTY_PROJECT}</span>
+            )
+          ) : null}
+        </ul>
       </div>
       {/* <Link to={"/add-project"}> */}
       <Link to={"/create-project"}>
