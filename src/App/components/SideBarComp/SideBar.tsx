@@ -3,6 +3,7 @@ import Projects from "./ProjectsComp/Projects";
 import { signOut } from "firebase/auth";
 import { auth } from "../../context/firebase";
 import { ImagePath } from "../../constants/paths/ImagePaths";
+import { TextAuth } from "../../constants/texts/TextAuth";
 
 export default function SideBar() {
   return (
@@ -15,7 +16,7 @@ export default function SideBar() {
         <Projects />
       </div>
       <button type="button" onClick={() => signOut(auth)}>
-        Se déconnecter
+        {TextAuth.BUTTON_LOGOUT}
       </button>
     </div>
   );
