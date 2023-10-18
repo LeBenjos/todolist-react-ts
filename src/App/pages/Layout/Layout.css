@@ -9,3 +9,10 @@
   width: 256px;
   height: 100%;
 }
+
+.Layout .Main{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 100%;
+}

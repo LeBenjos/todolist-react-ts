@@ -4,9 +4,11 @@ import { authContext } from "../../context/Auth";
 import "./Layout.css";
 import SideBar from "../../components/SideBarComp/SideBar";
 import { Outlet } from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 export default function Layout() {
   const [userData, setUserData] = useState<any>();
+  const [projectData, setProjectData] = useState<any>();
   const user = useContext(authContext);
 
   useEffect(() => {
@@ -19,6 +21,7 @@ export default function Layout() {
     <div className="Layout">
       <SideBar />
       <div className="Main">
+        <Header />
         <Outlet />
       </div>
     </div>
