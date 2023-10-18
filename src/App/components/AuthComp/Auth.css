@@ -7,7 +7,8 @@
 }
 
 .Auth .input-container {
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   display: flex;
   flex-flow: column;
   gap: 0.5rem;

@@ -11,7 +11,6 @@ import { authContext } from "../../context/Auth.tsx";
 import { Navigate } from "react-router-dom";
 import { PagePath } from "../../constants/paths/PagePath.ts";
 import { TextAuth } from "../../constants/texts/TextAuth.ts";
-import Logo from "../../components/AuthComp/Logo.tsx";
 
 export default function Authentication() {
   const user = useContext(authContext);
