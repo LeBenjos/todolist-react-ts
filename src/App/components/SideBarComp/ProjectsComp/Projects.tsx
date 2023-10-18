@@ -7,6 +7,7 @@ import { ImagePath } from "../../../constants/paths/ImagePaths";
 import { CtaText } from "../../../constants/texts/CtaText";
 import { SideBarText } from "../../../constants/texts/SideBarText";
 import { LoadingMessage } from "../../../constants/messages/LoadingMessage";
+import { deleteProject } from "../../../services/projects/deleteProject.service";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>();
@@ -21,7 +22,12 @@ export default function Projects() {
       setProjects(res);
       setIsLoading(false);
     });
-  }, []);
+  }, [projects]);
+
+  const handleDelete = (id: string) => {
+    if (!user || !id) return;
+    deleteProject(id, user.providerData[0].uid);
+  };
 
   return (
     <div className="Projects">
@@ -37,19 +43,26 @@ export default function Projects() {
         />
       </button>
       <div className="projects-modal">
-        {isOpen ? (
-          projects?.length ? (
-            projects.map((project, index) => (
-              <Link key={index} to={"/project/" + project.id}>
-                <li>{project.name}</li>
-              </Link>
-            ))
-          ) : isLoading ? (
-            <span>{LoadingMessage.LOADING_NAME}</span>
-          ) : (
-            <span>{SideBarText.EMPTY_PROJECT}</span>
-          )
-        ) : null}
+        <ul>
+          {isOpen ? (
+            projects?.length ? (
+              projects.map((project, index) => (
+                <div className="project">
+                  <Link to="/">
+                    <img src={ImagePath.TRASH} alt="Trash" onClick={() => handleDelete(project.id)}/>
+                  </Link>
+                  <Link key={index} to={"/project/" + project.id}>
+                    <li className="project-name">{project.name}</li>
+                  </Link>
+                </div>
+              ))
+            ) : isLoading ? (
+              <span>{LoadingMessage.LOADING_NAME}</span>
+            ) : (
+              <span>{SideBarText.EMPTY_PROJECT}</span>
+            )
+          ) : null}
+        </ul>
       </div>
       {/* <Link to={"/add-project"}> */}
       <Link to={"/create-project"}>
