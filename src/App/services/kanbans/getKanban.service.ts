@@ -11,6 +11,7 @@ export const getKanbans = async (projectId: string) => {
   kanbanValues.forEach((state) => {
     const kanbanRef = doc(db, "projects", projectId, "kanban", state);
     getDoc(kanbanRef).then((res) => {
+      console.log(res.exists() ? res.data() : "pas de kanban");
       res.exists()
         ? kanbanList.push({
             state,

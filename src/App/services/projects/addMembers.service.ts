@@ -1,11 +1,4 @@
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  setDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { arrayUnion, doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../context/firebase";
 
 export const addMembers = async (memberMail: string, projectId: string) => {
@@ -20,7 +13,7 @@ export const addMembers = async (memberMail: string, projectId: string) => {
     if (projectResults.exists()) {
       console.log(projectResults.data());
       await updateDoc(projectRef, {
-        participants: [memberMail],
+        participants: arrayUnion(memberMail),
       });
       return true;
     } else {
