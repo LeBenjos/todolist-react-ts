@@ -16,7 +16,9 @@ export default function Kanban({ state, tasks }: KanbanProps) {
     <div className="Kanban">
       <div className="kanban-header">
         <span>{KanbanText[state]}</span>
-        <button onClick={() => setOpenForm(true)}>{CtaText.ADD_TASK}</button>
+        <button className="buttonCta" onClick={() => setOpenForm(true)}>
+          + {CtaText.ADD_TASK}
+        </button>
       </div>
       <div className="kanban-body">
         {openForm ? (
