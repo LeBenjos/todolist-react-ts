@@ -7,7 +7,10 @@ import PrivateRoute from "./routes/PrivateRoute.tsx";
 // Pages
 import Authentication from "./pages/Authentication/Authentication.tsx";
 import Layout from "./pages/Layout/Layout.tsx";
+
+// Composants
 import CreateProjectForm from "./components/CreateProjectForm/CreateProjectForm.tsx";
+import AddMemberForm from "./components/AddMember/AddMember.tsx";
 
 // Constants
 import { PagePath } from "./constants/paths/PagePath.ts";
@@ -24,11 +27,15 @@ export default function App() {
           <Route
             path="project/:id"
             element={<div>Composant projet</div>}
-          ></Route>
+          />
+          <Route
+            path="project/:id/add_member"
+            element={<AddMemberForm />}
+          />
           <Route
             path="create-project"
             element={<CreateProjectForm />}
-          ></Route>
+          />
         </Route>
       </Route>
     </Routes>

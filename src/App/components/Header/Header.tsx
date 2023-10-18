@@ -33,6 +33,6 @@ export default function Header() {
 
     return <div className="header-container">
         <HeaderLeft userData={userData} projects={projects} />
-        <HeaderRight userData={userData} />
+        <HeaderRight userData={userData} projects={projects} />
     </div>
 }
