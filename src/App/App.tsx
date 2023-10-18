@@ -28,6 +28,10 @@ export default function App() {
         <Route element={<PrivateRoute redirect={PagePath.AUTHENTIFICATION} />}>
           <Route path={PagePath.HOME} element={<Layout />}>
             <Route
+              path="project/:id"
+              element={<div>Composant projet</div>}
+            ></Route>
+            <Route
               path="create-project"
               element={<CreateProjectForm />}
             ></Route>

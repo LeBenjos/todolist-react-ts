@@ -43,7 +43,7 @@ body {
 }
 
 .input-container label {
-  font-size: var(--fs-small);
+  font-size: var(--fs-medium);
 }
 
 .input-container input {
@@ -73,4 +73,22 @@ body {
 .buttonCta:active {
   color: var(--color-green);
   background-color: var(--color-black);
+}
+
+.error-p:empty {
+  display: none;
+}
+
+.error-p {
+  color: red;
+  text-decoration: underline;
+}
+
+input.error-input {
+  border: 1px solid red;
+}
+
+input.success-input {
+  color: color(--color-green);
+  text-decoration: underline;
 }

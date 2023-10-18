@@ -1,0 +1,14 @@
+.CreateProjectForm {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.CreateProjectForm form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: var(--fs-medium);
+}

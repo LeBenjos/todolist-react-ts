@@ -6,28 +6,6 @@
   gap: var(--fs-medium);
 }
 
-.Auth .input-container {
-  width: 80%;
-  max-width: 500px;
-  display: flex;
-  flex-flow: column;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.input-container label {
-  font-size: var(--fs-small);
-}
-
-.input-container input {
-  box-sizing: border-box;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: var(--fs-medium);
-  background-color: var(--color-white);
-}
-
 .Auth button {
   cursor: pointer;
   padding: 1rem;
@@ -43,19 +21,18 @@
   background-color: var(--color-green);
 }
 
-.logoContainer{
+.logoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.logoContainer img{
+.logoContainer img {
   width: 100px;
 }
 
-
-.Auth .error-p:empty{
+.Auth .error-p:empty {
   display: none;
 }
 
