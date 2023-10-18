@@ -18,6 +18,7 @@ import HeaderRight from "./Side/HeaderRight.tsx";
 
 // Styles
 import "./header.css"
+import { compareArraysOfObjects } from "../../services/functions/CompareArraysOfObjects.ts";
 
 export default function Header() {
     const [userData, setUserData] = useState<User | undefined>();
@@ -28,6 +29,15 @@ export default function Header() {
         if (!user) return;
         get(user.providerData[0].uid).then((res) => setUserData(res as User));
         getProjects(user.providerData[0].uid).then((res) => setProjects(res as Project[]));
+    }, []);
+
+    useEffect(() => {
+        if (!user) return;
+        getProjects(user.providerData[0].uid)
+            .then((res) => {
+                if(projects && compareArraysOfObjects(res, projects as Project[])) return;
+                setProjects(res as Project[])
+            });
     }, [projects]);
 
 

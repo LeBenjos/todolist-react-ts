@@ -8,6 +8,8 @@ import { CtaText } from "../../../constants/texts/CtaText";
 import { SideBarText } from "../../../constants/texts/SideBarText";
 import { LoadingMessage } from "../../../constants/messages/LoadingMessage";
 import { deleteProject } from "../../../services/projects/deleteProject.service";
+import { compareArraysOfObjects } from "../../../services/functions/CompareArraysOfObjects";
+import { Project } from "../../../models/project.model";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>();
@@ -19,6 +21,15 @@ export default function Projects() {
     if (!user) return;
     setIsLoading(true);
     getProjects(user?.providerData[0].uid).then((res) => {
+      setProjects(res);
+      setIsLoading(false);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!user) return;
+    getProjects(user?.providerData[0].uid).then((res) => {
+      if(projects && compareArraysOfObjects(res, projects as Project[])) return;
       setProjects(res);
       setIsLoading(false);
     });
