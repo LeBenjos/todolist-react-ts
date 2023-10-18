@@ -41,12 +41,12 @@ export default function Project() {
             tasks={kanbanData.find((kanban) => kanban.state === "todo")}
           />
           <Kanban
-            state="todo"
-            tasks={kanbanData.find((kanban) => kanban.state === "todo")}
+            state="doing"
+            tasks={kanbanData.find((kanban) => kanban.state === "doing")}
           />
           <Kanban
-            state="todo"
-            tasks={kanbanData.find((kanban) => kanban.state === "todo")}
+            state="done"
+            tasks={kanbanData.find((kanban) => kanban.state === "done")}
           />
         </div>
       ) : undefined}
