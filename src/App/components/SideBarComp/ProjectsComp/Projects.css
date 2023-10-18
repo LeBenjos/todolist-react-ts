@@ -1,0 +1,49 @@
+.Projects {
+  margin: 2rem 0;
+  font-size: var(--fs-medium);
+  display: flex;
+  flex-flow: column;
+}
+
+.Projects button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  color: var(--color-grey);
+  padding: 0.5rem 0.8rem;
+  background: none;
+}
+
+.Projects button:hover {
+  text-decoration: underline;
+}
+.Projects button > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Projects button:last-child {
+  justify-content: flex-end;
+}
+
+.Projects a,
+.Projects .projects-modal {
+  color: var(--color-grey);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.Projects a li,
+.Projects .projects-modal {
+  list-style: none;
+  padding: 0 0 0.5rem 3rem;
+}
+
+.Projects a:hover {
+  text-decoration: underline;
+}
