@@ -36,6 +36,7 @@ export default function AddMemberForm() {
         }
 
         if (!user || !id) return;
+        console.log(memberName, id)
         addMembers(memberName, id);
     };
 
