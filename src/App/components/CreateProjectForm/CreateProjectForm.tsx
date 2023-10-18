@@ -4,17 +4,12 @@ import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 import { CtaText } from "../../constants/texts/CtaText";
 import { createProjects } from "../../services/projects/createProjets.service";
 import { authContext } from "../../context/Auth";
+import { FormText } from "../../constants/texts/FormText";
 
 export default function CreateProjectForm() {
   const user = useContext(authContext);
   const [projectName, setProjectName] = useState("");
   const [error, setError] = useState<string>("");
-
-  // onClick={() => {
-  //   createProjects("réel@forreal.com", "Recette").then((res) =>
-  //     console.log(res)
-  //   );
-  // }}
 
   const handleProjectName = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (error) setError("");
@@ -38,7 +33,7 @@ export default function CreateProjectForm() {
       <form>
         <p className="error-p">{error}</p>
         <div className="input-container">
-          <label htmlFor="project-name">Nom du projet</label>
+          <label htmlFor="project-name">{FormText.PROJECT_NAME}</label>
           <input
             className={error ? "error-input" : ""}
             required

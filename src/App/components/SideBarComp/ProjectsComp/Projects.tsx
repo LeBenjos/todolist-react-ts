@@ -5,6 +5,7 @@ import { authContext } from "../../../context/Auth";
 import { Link } from "react-router-dom";
 import { ImagePath } from "../../../constants/paths/ImagePaths";
 import { CtaText } from "../../../constants/texts/CtaText";
+import { SideBarText } from "../../../constants/texts/SideBarText";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>();
@@ -25,7 +26,7 @@ export default function Projects() {
       <button onClick={() => setIsOpen(!isOpen)}>
         <div>
           <img src={ImagePath.FOLDER} alt="Folder icon" />
-          <span>Projects</span>
+          <span>{SideBarText.PROJECTS}</span>
         </div>
         <img
           className="chevron-icon"
@@ -34,16 +35,15 @@ export default function Projects() {
         />
       </button>
       <div className="projects-modal">
-        {isOpen &&
-          (projects ? (
-            projects.map((project) => (
-              <Link to={"/project/" + project.id}>
-                <li>{project.name}</li>
-              </Link>
-            ))
-          ) : (
-            <span>Aucun projet</span>
-          ))}
+        {isOpen && projects ? (
+          projects.map((project) => (
+            <Link to={"/project/" + project.id}>
+              <li>{project.name}</li>
+            </Link>
+          ))
+        ) : (
+          <span>{SideBarText.EMPTY_PROJECT}</span>
+        )}
       </div>
       {/* <Link to={"/add-project"}> */}
       <Link to={"/create-project"}>
