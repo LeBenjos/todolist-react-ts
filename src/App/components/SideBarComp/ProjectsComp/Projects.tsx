@@ -48,15 +48,10 @@ export default function Projects() {
           ))}
       </div>
       {/* <Link to={"/add-project"}> */}
-      <button
-      // onClick={() => {
-      //   createProjects("réel@forreal.com", "Recette").then((res) =>
-      //     console.log(res)
-      //   );
-      // }}
-      >
-        + Add project
-      </button>
+      <Link to={"/create-project"}>
+        {/* TODO: Créer la constante dans Path */}
+        <button type="button">+ Add project</button>
+      </Link>
       {/* </Link> */}
     </div>
   );
