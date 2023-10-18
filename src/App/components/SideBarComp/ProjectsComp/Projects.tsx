@@ -3,10 +3,9 @@ import "./Projects.css";
 import { getProjects } from "../../../services/projects/getProjects.service";
 import { authContext } from "../../../context/Auth";
 import FolderIcon from "../../../assets/folder.svg";
-import ChevronDown from "../../../assets/chevron-down.svg";
-import ChevronUp from "../../../assets/chevron-up.svg";
 import { Link } from "react-router-dom";
 import { createProjects } from "../../../services/projects/createProjets.service";
+import { ImagePath } from "../../../constants/paths/ImagePaths";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>();
@@ -26,12 +25,12 @@ export default function Projects() {
     <div className="Projects">
       <button onClick={() => setIsOpen(!isOpen)}>
         <div>
-          <img src={FolderIcon} alt="Folder icon" />
+          <img src={ImagePath.FOLDER} alt="Folder icon" />
           <span>Projects</span>
         </div>
         <img
           className="chevron-icon"
-          src={isOpen ? ChevronUp : ChevronDown}
+          src={isOpen ? ImagePath.CHEVRON_UP : ImagePath.CHEVRON_DOWN}
           alt="Chevron icon"
         />
       </button>

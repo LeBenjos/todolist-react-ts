@@ -10,6 +10,8 @@ import { SuccessMessage } from "../../constants/messages/SuccessMessage";
 
 // Styles
 import "./Auth.css";
+import { TextAuth } from "../../constants/texts/TextAuth";
+import Logo from "./Logo";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -53,10 +55,11 @@ export default function Register() {
 
   return (
     <form className="Auth" action="">
+      <Logo />
       <p className="error-p">{error}</p>
       <p className="success-input">{success}</p>
       <div className="input-container">
-        <label htmlFor="name">Nom d'utilisateur</label>
+        <label htmlFor="name">{TextAuth.LABEL_USERNAME}</label>
         <input
           required
           className={error ? "error-input" : ""}
@@ -68,11 +71,11 @@ export default function Register() {
             setError("");
             setUsername(e.target.value);
           }}
-          placeholder="Nom d'utilisateur"
+          placeholder={TextAuth.PLACEHOLDER_USERNAME}
         />
       </div>
       <div className="input-container">
-        <label htmlFor="email">Adresse mail</label>
+        <label htmlFor="email">{TextAuth.LABEL_EMAIL}</label>
         <input
           required
           className={error ? "error-input" : ""}
@@ -84,11 +87,11 @@ export default function Register() {
             setError("");
             setEmail(e.target.value);
           }}
-          placeholder="Adresse mail"
+          placeholder={TextAuth.PLACEHOLDER_EMAIL}
         />
       </div>
       <div className="input-container">
-        <label htmlFor="password">Mot de passe</label>
+        <label htmlFor="password">{TextAuth.LABEL_PASSWORD}</label>
         <input
           required
           className={error ? "error-input" : ""}
@@ -100,13 +103,11 @@ export default function Register() {
             setError("");
             setPassword(e.target.value);
           }}
-          placeholder="Mot de passe"
+          placeholder={TextAuth.PLACEHOLDER_PASSWORD}
         />
       </div>
 
-      <button onClick={handleRegistration} type="submit">
-        S'inscrire
-      </button>
+      <button onClick={handleRegistration} type="submit">{TextAuth.BUTTON_REGISTER}</button>
     </form>
   );
 }

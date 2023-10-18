@@ -7,7 +7,8 @@
 }
 
 .Auth .input-container {
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   display: flex;
   flex-flow: column;
   gap: 0.5rem;
@@ -40,6 +41,22 @@
 .Auth button:hover {
   color: var(--color-black);
   background-color: var(--color-green);
+}
+
+.logoContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoContainer img{
+  width: 100px;
+}
+
+
+.Auth .error-p:empty{
+  display: none;
 }
 
 .Auth .error-p {
