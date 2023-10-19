@@ -17,7 +17,6 @@ export default function Project() {
     onSnapshot(collection(db, "projects", id, "kanban"), (snapshot) => {
       const result: any[] = [];
       snapshot.docs.forEach((doc) => {
-        console.log(doc.data(), doc.id);
         result.push({ state: doc.id, ...doc.data() });
       });
       setKanbanData(result);
