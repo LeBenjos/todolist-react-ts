@@ -10,9 +10,12 @@ import { LoadingMessage } from "../../../constants/messages/LoadingMessage";
 import { deleteProject } from "../../../services/projects/deleteProject.service";
 import { compareArraysOfObjects } from "../../../services/functions/CompareArraysOfObjects";
 import { Project } from "../../../models/project.model";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { db } from "../../../context/firebase";
+import { projContext } from "../../../context/Proj";
 
 export default function Projects() {
-  const [projects, setProjects] = useState<any[]>();
+  const [projects, setProjects] = useState<any[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const user = useContext(authContext);
@@ -20,21 +23,21 @@ export default function Projects() {
   useEffect(() => {
     if (!user) return;
     setIsLoading(true);
-    getProjects(user?.providerData[0].uid).then((res) => {
-      setProjects(res);
-      setIsLoading(false);
-    });
+    onSnapshot(
+      query(
+        collection(db, "projects"),
+        where("participants", "array-contains", user.providerData[0].uid)
+      ),
+      (snapshot) => {
+        const result: any[] = [];
+        snapshot.forEach((doc) => {
+          result.push(doc.data());
+        });
+        setProjects([...result]);
+      }
+    );
+    setIsLoading(false);
   }, []);
-
-  useEffect(() => {
-    if (!user) return;
-    getProjects(user?.providerData[0].uid).then((res) => {
-      if (projects && compareArraysOfObjects(res, projects as Project[]))
-        return;
-      setProjects(res);
-      setIsLoading(false);
-    });
-  }, [projects]);
 
   const handleDelete = (id: string) => {
     if (!user || !id) return;

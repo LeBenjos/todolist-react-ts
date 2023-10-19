@@ -1,5 +1,6 @@
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { db } from "../../context/firebase";
+import { addMembers } from "./addMembers.service";
 
 export const kanbanValues = ["todo", "doing", "done"];
 
@@ -18,6 +19,7 @@ export const createProjects = async (
   await setDoc(projectRef, {
     name: projectName,
   });
+  await addMembers(userId, userProjectSnap.id);
 
   kanbanValues.forEach((state) => {
     const kanbanProjectRef = doc(
