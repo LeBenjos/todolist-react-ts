@@ -27,7 +27,7 @@ export default function Project() {
       setKanbanData(result);
     });
     // createTask(id, "tache");
-  }, []);
+  }, [id]);
 
   return (
     <div className="Project">
