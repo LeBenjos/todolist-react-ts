@@ -37,7 +37,6 @@ Lancer le serveur :
    - Partage de Todolist
    - Création de tâches
    - Suppression de tâches
-   - Édition de tâches
    - Filtres suivant l'état de la tâche
 
 ## Nous contacter :

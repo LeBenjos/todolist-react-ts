@@ -1,20 +1,29 @@
+// Librairies
 import { useState } from "react";
+
+// Constants
 import { KanbanText } from "../../../constants/texts/KanbanText";
-import "./Kanban.css";
+
+// Components
 import TaskCard from "../TaskCard/TaskCard";
 import TaskForm from "../TaskForm/TaskForm";
 
+// Styles
+import "./Kanban.css";
+
 interface KanbanProps {
-  state: "todo" | "doing" | "done";
-  tasks: any[];
+  state: KanbanText.TODO | KanbanText.DOING | KanbanText.DONE,
+  tasks: any[],
+  text: KanbanText.TODO_TEXT | KanbanText.DOING_TEXT | KanbanText.DONE_TEXT,
 }
-export default function Kanban({ state, tasks }: KanbanProps) {
+
+export default function Kanban({ state, tasks, text }: KanbanProps) {
   const [openForm, setOpenForm] = useState(false);
 
   return (
     <div className="Kanban">
       <div className="kanban-header">
-        <span>{state}</span>
+        <span>{text}</span>
         <button
           className="buttonCta buttonAddTask"
           onClick={() => setOpenForm(!openForm)}

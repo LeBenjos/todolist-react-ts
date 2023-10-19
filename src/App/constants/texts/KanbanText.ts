@@ -1,8 +1,8 @@
 export enum KanbanText {
   // STATE
-  TODO = "À faire",
-  DOING = "En cours",
-  DONE = "Terminée",
+  TODO = "todo",
+  DOING = "doing",
+  DONE = "done",
 
   // BUTTON
   ADD_TASK = "+",
@@ -10,4 +10,7 @@ export enum KanbanText {
 
   // TASK
   NONE_TASK = "Aucune tâche",
+  TODO_TEXT = "À faire",
+  DOING_TEXT = "En cours",
+  DONE_TEXT = "Terminée",
 };

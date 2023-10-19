@@ -6,6 +6,7 @@ import { authContext } from "../../context/Auth";
 // import { deleteTasks } from "../../services/tasks/deleteTasks.service";
 import Kanban from "./Kanban/Kanban";
 import "./Project.css";
+import { KanbanText } from "../../constants/texts/KanbanText";
 
 export default function Project() {
   const [kanbanData, setKanbanData] = useState<any[]>([]);
@@ -25,16 +26,19 @@ export default function Project() {
       {kanbanData.length ? (
         <div className="kanban-layout">
           <Kanban
-            state="todo"
-            tasks={kanbanData.find((kanban) => kanban.state === "todo").tasks}
+            state={KanbanText.TODO}
+            tasks={kanbanData.find((kanban) => kanban.state === KanbanText.TODO).tasks}
+            text={KanbanText.TODO_TEXT}
           />
           <Kanban
-            state="doing"
-            tasks={kanbanData.find((kanban) => kanban.state === "doing").tasks}
+            state={KanbanText.DOING}
+            tasks={kanbanData.find((kanban) => kanban.state === KanbanText.DOING).tasks}
+            text={KanbanText.DOING_TEXT}
           />
           <Kanban
-            state="done"
-            tasks={kanbanData.find((kanban) => kanban.state === "done").tasks}
+            state={KanbanText.DONE}
+            tasks={kanbanData.find((kanban) => kanban.state === KanbanText.DONE).tasks}
+            text={KanbanText.DONE_TEXT}
           />
         </div>
       ) : undefined}
