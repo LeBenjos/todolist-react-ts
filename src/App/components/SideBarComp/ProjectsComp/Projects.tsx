@@ -30,9 +30,10 @@ export default function Projects() {
       ),
       (snapshot) => {
         const result: any[] = [];
-        snapshot.forEach((doc) => {
-          result.push(doc.data());
+        snapshot.docs.forEach((doc) => {
+          result.push({ ...doc.data(), id: doc.id });
         });
+
         setProjects([...result]);
       }
     );
