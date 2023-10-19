@@ -12,16 +12,20 @@ HETIC - Web2 | Groupe 2
 ## Lancer le projet :
 
 Cloner le projet :
+
 ```bash
   git clone https://github.com/LeBenjos/todolist-react-ts.git
 ```
 
 Installer les dépendances :
+
 ```bash
+  cd todolist-react-ts
   npm i
 ```
 
 Lancer le serveur :
+
 ```bash
   npm run dev
 ```
@@ -29,22 +33,31 @@ Lancer le serveur :
 ## Fonctionnalités
 
 - **Authentification**
-   - Création d'un compte
-   - Connexion à un compte préalablement créé
+  - Création d'un compte
+  - Connexion à un compte préalablement créé
+  - Déconnecter un compte
 - **Todolist**
-   - Création de Todolist
-   - Suppression de Todolist
-   - Partage de Todolist
-   - Création de tâches
-   - Suppression de tâches
-   - Filtres suivant l'état de la tâche
+  - Création de Projet
+  - Suppression de Projet
+  - Partage de Projet
+  - Création de tâches
+  - Suppression de tâches
+  - Filtres suivant l'état de la tâche
+  - Update de l'état de la tâche
+
+## Technologies
+
+- TypeScript
+- React
+- FireBase, Cloud FireStore
 
 ## Nous contacter :
 
 Pour nous contacter en cas de besoin :
+
 - Benjamin SCHINKEL
-    - b_schinkel@hetic.eu
-    - benjos (discord)
+  - b_schinkel@hetic.eu
+  - benjos (discord)
 - Lousian TCHITOULA
-    - l_tchitoula@hetic.eu
-    - louisan (discord)
+  - l_tchitoula@hetic.eu
+  - louisan (discord)
