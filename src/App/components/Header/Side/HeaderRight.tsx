@@ -46,7 +46,7 @@ export default function HeaderRight({
       {project?.participants.length ? (
         <div>
           {project.participants
-            .filter((participant) => participant !== userData?.username)
+            .filter((participant) => participant !== userData?.email)
             .map((participant, index) => {
               return (
                 <div key={index}>
