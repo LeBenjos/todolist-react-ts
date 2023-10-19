@@ -8,7 +8,7 @@ import { createTask } from "../../../services/tasks/createTasks.service";
 // Constants
 import { TaskFormText } from "../../../constants/texts/TaskFormText";
 
-export default function TaskForm({ state }: { state: any }) {
+export default function TaskForm({ state, setOpenForm }: { state: any, setOpenForm: any }) {
   const [task, setTask] = useState<string>("");
   const { id } = useParams();
   console.log(id);
@@ -22,6 +22,7 @@ export default function TaskForm({ state }: { state: any }) {
 
     if (!id || !task) return;
     createTask(id, task, state);
+    setOpenForm(false)
   };
 
   return (

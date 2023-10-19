@@ -33,7 +33,7 @@ export default function Kanban({ state, tasks, text }: KanbanProps) {
       </div>
       <div className="kanban-body">
         {openForm ? (
-          <TaskForm state={state} />
+          <TaskForm state={state} setOpenForm={setOpenForm} />
         ) : !tasks?.length ? (
           <span>{KanbanText.NONE_TASK}</span>
         ) : (

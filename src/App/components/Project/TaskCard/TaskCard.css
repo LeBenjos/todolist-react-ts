@@ -30,3 +30,9 @@
 .trashBtn img:hover {
   width: 40px;
 }
+
+.right-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
