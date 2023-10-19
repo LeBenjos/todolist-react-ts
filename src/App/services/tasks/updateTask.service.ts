@@ -1,10 +1,4 @@
-import {
-  arrayRemove,
-  arrayUnion,
-  deleteDoc,
-  doc,
-  updateDoc,
-} from "firebase/firestore";
+import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../context/firebase";
 
 export const updateTask = async (
@@ -13,12 +7,12 @@ export const updateTask = async (
   newState: string,
   taskData: string
 ) => {
-  const taskRef = doc(db, "projects", projectId, previousState);
+  const taskRef = doc(db, "projects", projectId, "kanban", previousState);
   await updateDoc(taskRef, {
     tasks: arrayRemove(taskData),
   });
 
-  const newStateRef = doc(db, "projects", projectId, newState);
+  const newStateRef = doc(db, "projects", projectId, "kanban", newState);
   await updateDoc(newStateRef, {
     tasks: arrayUnion(taskData),
   });
