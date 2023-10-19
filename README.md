@@ -4,12 +4,16 @@
 
 HETIC - Web2 | Groupe 2
 
-## Groupe :
+## Groupe
 
 - [Benjamin SCHINKEL](https://github.com/LeBenjos)
 - [Lousian TCHITOULA](https://github.com/LTOssian)
 
-## Lancer le projet :
+## Aperçu
+
+![Screenshot](/public/assets/pictures/visuel-listly.jpeg "Screenshot page de projet")
+
+## Lancer le projet
 
 Cloner le projet :
 
@@ -53,7 +57,7 @@ Lancer le serveur :
 - React
 - FireBase, Cloud FireStore
 
-## Nous contacter :
+## Nous contacter
 
 Pour nous contacter en cas de besoin :
 
