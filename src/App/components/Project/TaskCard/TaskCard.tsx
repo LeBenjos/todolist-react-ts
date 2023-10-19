@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TaskCard.css";
 import { ImagePath } from "../../../constants/paths/ImagePaths";
 import { deleteTasks } from "../../../services/tasks/deleteTasks.service";
 import { useParams } from "react-router-dom";
-import { TaskFormText } from "../../../constants/texts/TaskFormText";
 import { KanbanText } from "../../../constants/texts/KanbanText";
 import { updateTask } from "../../../services/tasks/updateTask.service";
 
 interface TaskCard {
-  currentState: string,
-  description: string,
+  currentState: string;
+  description: string;
 }
 
 export default function TaskCard({ currentState, description }: TaskCard) {
   const { id } = useParams();
   const state = [
-    {state: KanbanText.TODO, text: KanbanText.TODO_TEXT},
-    {state: KanbanText.DOING, text: KanbanText.DOING_TEXT},
-    {state: KanbanText.DONE, text: KanbanText.DONE_TEXT},
+    { state: KanbanText.TODO, text: KanbanText.TODO_TEXT },
+    { state: KanbanText.DOING, text: KanbanText.DOING_TEXT },
+    { state: KanbanText.DONE, text: KanbanText.DONE_TEXT },
   ];
-
 
   const handleDelete = () => {
     if (!id) return;
@@ -27,9 +25,9 @@ export default function TaskCard({ currentState, description }: TaskCard) {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    if(!id) return
-    updateTask(id, currentState, e.target.value, description)
-  }
+    if (!id) return;
+    updateTask(id, currentState, e.target.value, description);
+  };
 
   return (
     <div className="TaskCard">
@@ -41,7 +39,11 @@ export default function TaskCard({ currentState, description }: TaskCard) {
           </button>
           <select defaultValue={currentState} onChange={handleChange}>
             {state.map((value, index) => {
-              return <option key={index} value={value.state} >{value.text}</option>
+              return (
+                <option key={index} value={value.state}>
+                  {value.text}
+                </option>
+              );
             })}
           </select>
         </div>

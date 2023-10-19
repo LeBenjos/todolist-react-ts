@@ -5,7 +5,6 @@ import "./Project.css";
 import { KanbanText } from "../../constants/texts/KanbanText";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../context/firebase";
-import { updateTask } from "../../services/tasks/updateTask.service";
 
 export default function Project() {
   const [kanbanData, setKanbanData] = useState<any[]>([]);

@@ -8,7 +8,6 @@ export const addMembers = async (memberMail: string, projectId: string) => {
   if (!userResult.exists()) return false;
 
   const projectRef = doc(db, "projects", projectId);
-  const projectResults = await getDoc(projectRef);
 
   await updateDoc(projectRef, {
     participants: arrayUnion(memberMail),

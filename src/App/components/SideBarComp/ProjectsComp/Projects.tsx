@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import "./Projects.css";
-import { getProjects } from "../../../services/projects/getProjects.service";
 import { authContext } from "../../../context/Auth";
 import { Link } from "react-router-dom";
 import { ImagePath } from "../../../constants/paths/ImagePaths";
