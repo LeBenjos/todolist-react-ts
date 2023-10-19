@@ -26,15 +26,15 @@ export default function Projects() {
     });
   }, []);
 
-  useEffect(() => {
-    if (!user) return;
-    getProjects(user?.providerData[0].uid).then((res) => {
-      if (projects && compareArraysOfObjects(res, projects as Project[]))
-        return;
-      setProjects(res);
-      setIsLoading(false);
-    });
-  }, [projects]);
+  // useEffect(() => {
+  //   if (!user) return;
+  //   getProjects(user?.providerData[0].uid).then((res) => {
+  //     if (projects && compareArraysOfObjects(res, projects as Project[]))
+  //       return;
+  //     setProjects(res);
+  //     setIsLoading(false);
+  //   });
+  // }, [projects]);
 
   const handleDelete = (id: string) => {
     if (!user || !id) return;

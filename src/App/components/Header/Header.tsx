@@ -31,14 +31,14 @@ export default function Header() {
         getProjects(user.providerData[0].uid).then((res) => setProjects(res as Project[]));
     }, []);
 
-    useEffect(() => {
-        if (!user) return;
-        getProjects(user.providerData[0].uid)
-            .then((res) => {
-                if(projects && compareArraysOfObjects(res, projects as Project[])) return;
-                setProjects(res as Project[])
-            });
-    }, [projects]);
+    // useEffect(() => {
+    //     if (!user) return;
+    //     getProjects(user.providerData[0].uid)
+    //         .then((res) => {
+    //             if(projects && compareArraysOfObjects(res, projects as Project[])) return;
+    //             setProjects(res as Project[])
+    //         });
+    // }, [projects]);
 
 
     return <div className="header-container">
