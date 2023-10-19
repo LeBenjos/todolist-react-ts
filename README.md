@@ -51,7 +51,7 @@ Lancer le serveur :
 
 - TypeScript
 - React
-- FireBase, Cloud FireStore
+- FireBase Authentication, Cloud FireStore
 
 ## Nous contacter
 
