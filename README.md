@@ -37,9 +37,10 @@ Lancer le serveur :
   - Connexion à un compte préalablement créé
   - Déconnecter un compte
 - **Todolist**
-  - Création de Projet
-  - Suppression de Projet
-  - Partage de Projet
+  - Création de projet
+  - Suppression de projet
+  - Partage de projet
+  - Afficher les participants au projet
   - Création de tâches
   - Suppression de tâches
   - Filtres suivant l'état de la tâche
