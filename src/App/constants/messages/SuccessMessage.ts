@@ -4,4 +4,7 @@ export enum SuccessMessage {
 
     // ADD_MEMBER
     SUCCESS_ADD_MEMBER = "Membre ajouté avec succès",
+
+    // CREATE_PROJECT
+    CREATE_PROJECT = "Projet créé avec succès!",
 }
