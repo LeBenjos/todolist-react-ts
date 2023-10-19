@@ -9,11 +9,16 @@ import { createTask } from "../../../services/tasks/createTasks.service";
 import { TaskFormText } from "../../../constants/texts/TaskFormText";
 import { ErrorMessage } from "../../../constants/messages/ErrorMessage";
 
-export default function TaskForm({ state, setOpenForm }: { state: any, setOpenForm: any }) {
+export default function TaskForm({
+  state,
+  setOpenForm,
+}: {
+  state: any;
+  setOpenForm: any;
+}) {
   const [task, setTask] = useState<string>("");
   const [error, setError] = useState<string>("");
   const { id } = useParams();
-  console.log(id);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (error) setError("");
@@ -29,11 +34,11 @@ export default function TaskForm({ state, setOpenForm }: { state: any, setOpenFo
 
     if (!id || !task) return;
     createTask(id, task, state);
-    setOpenForm(false)
+    setOpenForm(false);
   };
 
   return (
-    <form >
+    <form>
       <p className="error-p">{error}</p>
       <div className="taskForm">
         <div className="input-container">
