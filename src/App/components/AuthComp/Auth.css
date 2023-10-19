@@ -32,7 +32,7 @@
   width: 100px;
 }
 
-.Auth .error-p:empty {
+.error-p:empty, .success-input:empty{
   display: none;
 }
 
