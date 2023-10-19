@@ -12,9 +12,9 @@ import TaskForm from "../TaskForm/TaskForm";
 import "./Kanban.css";
 
 interface KanbanProps {
-  state: KanbanText.TODO | KanbanText.DOING | KanbanText.DONE,
-  tasks: any[],
-  text: KanbanText.TODO_TEXT | KanbanText.DOING_TEXT | KanbanText.DONE_TEXT,
+  state: KanbanText.TODO | KanbanText.DOING | KanbanText.DONE;
+  tasks: any[];
+  text: KanbanText.TODO_TEXT | KanbanText.DOING_TEXT | KanbanText.DONE_TEXT;
 }
 
 export default function Kanban({ state, tasks, text }: KanbanProps) {
@@ -38,7 +38,11 @@ export default function Kanban({ state, tasks, text }: KanbanProps) {
           <span>{KanbanText.NONE_TASK}</span>
         ) : (
           tasks.map((task, index) => (
-            <TaskCard key={index} currentState={state} description={task} />
+            <TaskCard
+              key={task + index}
+              currentState={state}
+              description={task}
+            />
           ))
         )}
       </div>
