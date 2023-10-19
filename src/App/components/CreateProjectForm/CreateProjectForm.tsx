@@ -18,6 +18,7 @@ export default function CreateProjectForm() {
   };
 
   const addProject = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (!projectName) {
       setError(ErrorMessage.AUTH_INVALID_INPUT);
       return;
@@ -42,6 +43,7 @@ export default function CreateProjectForm() {
             type="text"
             name="project-name"
             id="project-name"
+            placeholder={FormText.PLACEHOLDER_PROJECT_NAME}
           />
         </div>
         <Link to="/">
