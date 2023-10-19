@@ -2,16 +2,12 @@
 
 # Projet TODOLIST REACT
 
-HETIC - Web2 | Groupe 2
+Temps : 2 jours
 
 ## Groupe
 
 - [Benjamin SCHINKEL](https://github.com/LeBenjos)
 - [Lousian TCHITOULA](https://github.com/LTOssian)
-
-## Aperçu
-
-![Screenshot](/public/assets/pictures/visuel-listly.jpeg "Screenshot page de projet")
 
 ## Lancer le projet
 
@@ -67,3 +63,5 @@ Pour nous contacter en cas de besoin :
 - Lousian TCHITOULA
   - l_tchitoula@hetic.eu
   - louisan (discord)
+
+HETIC - Web2 | Groupe 2
