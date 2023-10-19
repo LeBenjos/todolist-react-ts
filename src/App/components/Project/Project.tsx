@@ -1,19 +1,15 @@
-import { useContext, useEffect, useState } from "react";
-import { getKanbans } from "../../services/kanbans/getKanban.service";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { authContext } from "../../context/Auth";
-// import { createTask } from "../../services/tasks/createTasks.service";
-// import { deleteTasks } from "../../services/tasks/deleteTasks.service";
 import Kanban from "./Kanban/Kanban";
 import "./Project.css";
 import { KanbanText } from "../../constants/texts/KanbanText";
-import { collection, doc, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../context/firebase";
+import { updateTask } from "../../services/tasks/updateTask.service";
 
 export default function Project() {
   const [kanbanData, setKanbanData] = useState<any[]>([]);
   const { id } = useParams();
-  const user = useContext(authContext);
 
   useEffect(() => {
     if (!id) return;
@@ -26,6 +22,8 @@ export default function Project() {
       });
       setKanbanData(result);
     });
+
+    // updateTask(id, "todo", "doing", "tache");
     // createTask(id, "tache");
   }, [id]);
 
