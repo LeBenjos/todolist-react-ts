@@ -5,6 +5,7 @@ import { deleteTasks } from "../../../services/tasks/deleteTasks.service";
 import { useParams } from "react-router-dom";
 import { TaskFormText } from "../../../constants/texts/TaskFormText";
 import { KanbanText } from "../../../constants/texts/KanbanText";
+import { updateTask } from "../../../services/tasks/updateTask.service";
 
 interface TaskCard {
   currentState: string,
@@ -26,7 +27,8 @@ export default function TaskCard({ currentState, description }: TaskCard) {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log("yes")
+    if(!id) return
+    updateTask(id, currentState, e.target.value, description)
   }
 
   return (
