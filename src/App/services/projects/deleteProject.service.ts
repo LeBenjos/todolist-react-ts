@@ -1,4 +1,4 @@
-import { collection, deleteDoc, doc } from "firebase/firestore";
+import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../context/firebase";
 
 export const deleteProject = async (projectId: string, userId: string) => {

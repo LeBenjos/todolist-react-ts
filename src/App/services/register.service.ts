@@ -1,5 +1,5 @@
 import { CreateUserInterface } from "../models/user.model";
-import { setDoc, addDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 import { auth, db } from "../context/firebase";

@@ -1,4 +1,4 @@
-import { arrayRemove, doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../context/firebase";
 
 export const deleteTasks = async (

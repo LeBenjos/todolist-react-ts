@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // Firebase
-import { User, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 // Context
 import { auth } from "../../context/firebase";
@@ -35,12 +35,9 @@ export default function LogIn() {
 
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user: User = userCredential.user;
-      })
+      .then()
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
         let message: string;
         switch (errorCode) {
           case "auth/invalid-email":
