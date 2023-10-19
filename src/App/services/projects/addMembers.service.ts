@@ -3,21 +3,15 @@ import { db } from "../../context/firebase";
 
 export const addMembers = async (memberMail: string, projectId: string) => {
   const userRef = doc(db, "users", memberMail);
-
   const userResult = await getDoc(userRef);
 
-  if (userResult.exists()) {
-    const projectRef = doc(db, "projects", projectId);
-    const projectResults = await getDoc(projectRef);
+  if (!userResult.exists()) return false;
 
-    if (projectResults.exists()) {
-      console.log(projectResults.data());
-      await updateDoc(projectRef, {
-        participants: arrayUnion(memberMail),
-      });
-      return true;
-    } else {
-      return false;
-    }
-  }
+  const projectRef = doc(db, "projects", projectId);
+  const projectResults = await getDoc(projectRef);
+
+  await updateDoc(projectRef, {
+    participants: arrayUnion(memberMail),
+  });
+  return true;
 };

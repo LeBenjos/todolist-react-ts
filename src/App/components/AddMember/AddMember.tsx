@@ -35,7 +35,9 @@ export default function AddMemberForm() {
     }
 
     if (!user || !id) return;
-    addMembers(memberName, id);
+    addMembers(memberName, id).then((res) => {
+      !res ? setError(ErrorMessage.ADD_MEMBER) : setError("");
+    });
   };
 
   return (
