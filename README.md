@@ -2,7 +2,7 @@
 
 # Projet TODOLIST REACT
 
-HETIC - Web2 | Groupe 2
+Temps : 2 jours
 
 ## Groupe
 
@@ -67,3 +67,5 @@ Pour nous contacter en cas de besoin :
 - Lousian TCHITOULA
   - l_tchitoula@hetic.eu
   - louisan (discord)
+
+HETIC - Web2 | Groupe 2
