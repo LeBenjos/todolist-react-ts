@@ -8,11 +8,8 @@ import { CtaText } from "../../../constants/texts/CtaText";
 import { SideBarText } from "../../../constants/texts/SideBarText";
 import { LoadingMessage } from "../../../constants/messages/LoadingMessage";
 import { deleteProject } from "../../../services/projects/deleteProject.service";
-import { compareArraysOfObjects } from "../../../services/functions/CompareArraysOfObjects";
-import { Project } from "../../../models/project.model";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../../../context/firebase";
-import { projContext } from "../../../context/Proj";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>([]);

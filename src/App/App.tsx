@@ -18,12 +18,10 @@ import { PagePath } from "./constants/paths/PagePath.ts";
 // Styles
 import "./styles/app.css";
 import Project from "./components/Project/Project.tsx";
-import Proj from "./context/Proj.tsx";
 
 export default function App() {
   return (
     <div>
-      <Proj>
         <Routes>
           <Route
             path={PagePath.AUTHENTIFICATION}
@@ -42,7 +40,6 @@ export default function App() {
             </Route>
           </Route>
         </Routes>
-      </Proj>
     </div>
   );
 }
