@@ -9,10 +9,6 @@ Temps : 2 jours
 - [Benjamin SCHINKEL](https://github.com/LeBenjos)
 - [Lousian TCHITOULA](https://github.com/LTOssian)
 
-## Aperçu
-
-![Screenshot](/public/assets/pictures/visuel-listly.jpeg "Screenshot page de projet")
-
 ## Lancer le projet
 
 Cloner le projet :
