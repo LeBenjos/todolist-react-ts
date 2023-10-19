@@ -35,16 +35,17 @@ Lancer le serveur :
 - **Authentification**
   - Création d'un compte
   - Connexion à un compte préalablement créé
-  - Déconnecter un compte
+  - Déconnexion un compte
 - **Todolist**
   - Création de projet
   - Suppression de projet
-  - Partage de projet
-  - Afficher les participants au projet
   - Création de tâches
   - Suppression de tâches
   - Filtres suivant l'état de la tâche
   - Update de l'état de la tâche
+- **Collaboration**
+  - Partage de projet
+  - Affichage les participants au projet
 
 ## Technologies
 
