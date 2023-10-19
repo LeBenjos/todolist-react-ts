@@ -15,15 +15,18 @@ import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 // Styles
 import "./AddMemberForm.css";
 import { useParams } from "react-router-dom";
+import { SuccessMessage } from "../../constants/messages/SuccessMessage";
 
 export default function AddMemberForm() {
   const user = useContext(authContext);
   const { id } = useParams();
   const [memberName, setMemberName] = useState("");
   const [error, setError] = useState<string>("");
+  const [success, setSuccess] = useState<string>("");
 
   const handleMemberName = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (error) setError("");
+    if (success) setSuccess("");
     setMemberName(e.target.value);
   };
 
@@ -36,14 +39,17 @@ export default function AddMemberForm() {
 
     if (!user || !id) return;
     addMembers(memberName, id).then((res) => {
-      !res ? setError(ErrorMessage.MEMBER_NOT_FOUND) : setError("");
+      !res
+        ? setError(ErrorMessage.MEMBER_NOT_FOUND)
+        : setSuccess(SuccessMessage.SUCCESS_ADD_MEMBER);
     });
   };
 
   return (
     <div className="AddMemberForm">
       <form>
-        <p className="error-p">{error}</p>
+        {error ? <p className="error-p">{error}</p> : null}
+        {success ? <p className="success-input">{success}</p> : null}
         <div className="input-container">
           <label htmlFor="project-name">{FormText.LABEL_USER_EMAIL}</label>
           <input

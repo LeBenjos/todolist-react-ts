@@ -85,6 +85,11 @@ body {
   text-decoration: underline;
 }
 
+.success-input {
+  color: color(--color-green);
+  text-decoration: underline;
+}
+
 input.error-input {
   border: 1px solid red;
 }
