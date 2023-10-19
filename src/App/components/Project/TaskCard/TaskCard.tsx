@@ -39,7 +39,7 @@ export default function TaskCard({ currentState, description }: TaskCard) {
           <button className="trashBtn" onClick={handleDelete}>
             <img src={ImagePath.TRASH} alt="Trash icon" />
           </button>
-          <select name="pets" id="pet-select" defaultValue={currentState} onChange={handleChange}>
+          <select defaultValue={currentState} onChange={handleChange}>
             {state.map((value, index) => {
               return <option key={index} value={value.state} >{value.text}</option>
             })}
