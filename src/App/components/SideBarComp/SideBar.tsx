@@ -1,10 +1,19 @@
-import "./SideBar.css";
-import Projects from "./ProjectsComp/Projects";
+// Libraries
+import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
+
+// Component
+import Projects from "./ProjectsComp/Projects";
+
+// Context
 import { auth } from "../../context/firebase";
+
+// Constants
 import { ImagePath } from "../../constants/paths/ImagePaths";
 import { TextAuth } from "../../constants/texts/TextAuth";
-import { Link } from "react-router-dom";
+
+// Styles
+import "./SideBar.css";
 
 export default function SideBar() {
   return (

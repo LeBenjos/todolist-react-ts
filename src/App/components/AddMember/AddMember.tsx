@@ -1,5 +1,6 @@
 // Librairies
 import { useContext, useState } from "react";
+import { useParams } from "react-router-dom";
 
 // Services
 import { addMembers } from "../../services/projects/addMembers.service";
@@ -11,11 +12,10 @@ import { authContext } from "../../context/Auth";
 import { FormText } from "../../constants/texts/FormText";
 import { CtaText } from "../../constants/texts/CtaText";
 import { ErrorMessage } from "../../constants/messages/ErrorMessage";
+import { SuccessMessage } from "../../constants/messages/SuccessMessage";
 
 // Styles
 import "./AddMemberForm.css";
-import { useParams } from "react-router-dom";
-import { SuccessMessage } from "../../constants/messages/SuccessMessage";
 
 export default function AddMemberForm() {
   const user = useContext(authContext);

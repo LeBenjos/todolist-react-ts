@@ -1,10 +1,17 @@
+// Libraries
 import React from "react";
+import { useParams } from "react-router-dom";
+
+// Services
+import { deleteTasks } from "../../../services/tasks/deleteTasks.service";
+import { updateTask } from "../../../services/tasks/updateTask.service";
+
+// Constants
+import { KanbanText } from "../../../constants/texts/KanbanText";
+
+// Styles
 import "./TaskCard.css";
 import { ImagePath } from "../../../constants/paths/ImagePaths";
-import { deleteTasks } from "../../../services/tasks/deleteTasks.service";
-import { useParams } from "react-router-dom";
-import { KanbanText } from "../../../constants/texts/KanbanText";
-import { updateTask } from "../../../services/tasks/updateTask.service";
 
 interface TaskCard {
   currentState: string;

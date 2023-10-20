@@ -1,12 +1,21 @@
+// Libraries
 import { useContext, useState } from "react";
-import "./CreateProjectForm.css";
+import { Link } from "react-router-dom";
+
+// Services
+import { createProjects } from "../../services/projects/createProjets.service";
+
+//Context
+import { authContext } from "../../context/Auth";
+
+// Constants
 import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 import { CtaText } from "../../constants/texts/CtaText";
-import { createProjects } from "../../services/projects/createProjets.service";
-import { authContext } from "../../context/Auth";
 import { FormText } from "../../constants/texts/FormText";
-import { Link } from "react-router-dom";
 import { SuccessMessage } from "../../constants/messages/SuccessMessage";
+
+// Styles
+import "./CreateProjectForm.css";
 
 export default function CreateProjectForm() {
   const user = useContext(authContext);

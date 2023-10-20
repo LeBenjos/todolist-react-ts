@@ -7,10 +7,10 @@ import { createUser } from "../../services/register.service";
 // Constants
 import { ErrorMessage } from "../../constants/messages/ErrorMessage";
 import { SuccessMessage } from "../../constants/messages/SuccessMessage";
+import { TextAuth } from "../../constants/texts/TextAuth";
 
 // Styles
 import "./Auth.css";
-import { TextAuth } from "../../constants/texts/TextAuth";
 import Logo from "./Logo";
 
 export default function Register() {

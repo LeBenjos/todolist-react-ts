@@ -1,14 +1,23 @@
+// Libraries
 import { useContext, useEffect, useState } from "react";
-import "./Projects.css";
-import { authContext } from "../../../context/Auth";
 import { Link } from "react-router-dom";
-import { ImagePath } from "../../../constants/paths/ImagePaths";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
+
+// Contexts
+import { db } from "../../../context/firebase";
+import { authContext } from "../../../context/Auth";
+
+// Services
+import { deleteProject } from "../../../services/projects/deleteProject.service";
+
+// Constants
 import { CtaText } from "../../../constants/texts/CtaText";
 import { SideBarText } from "../../../constants/texts/SideBarText";
 import { LoadingMessage } from "../../../constants/messages/LoadingMessage";
-import { deleteProject } from "../../../services/projects/deleteProject.service";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
-import { db } from "../../../context/firebase";
+
+// Styles
+import "./Projects.css";
+import { ImagePath } from "../../../constants/paths/ImagePaths";
 
 export default function Projects() {
   const [projects, setProjects] = useState<any[]>([]);
