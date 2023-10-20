@@ -43,9 +43,6 @@ export default function LogIn() {
           case "auth/invalid-email":
             message = ErrorMessage.AUTH_INVALID_EMAIL
             break;
-          case "auth/invalid-email":
-            message = ErrorMessage.AUTH_INVALID_EMAIL
-            break;
           default:
             message = ErrorMessage.AUTH_DEFAULT_MESSAGE
             break;
