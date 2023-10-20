@@ -7,7 +7,7 @@ Temps : 2 jours
 ## Groupe
 
 - [Benjamin SCHINKEL](https://github.com/LeBenjos)
-- [Lousian TCHITOULA](https://github.com/LTOssian)
+- [Louisan TCHITOULA](https://github.com/LTOssian)
 
 ## Aperçu
 
@@ -64,7 +64,7 @@ Pour nous contacter en cas de besoin :
 - Benjamin SCHINKEL
   - b_schinkel@hetic.eu
   - benjos (discord)
-- Lousian TCHITOULA
+- Louisan TCHITOULA
   - l_tchitoula@hetic.eu
   - louisan (discord)
 
